@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W148242GYC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-W148242GYC');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script type="application/javascript" src='https://luvsia.com/js/theme-mode.js'></script>
@@ -576,18 +585,21 @@ else {
                 diffMinutes * minutes) / seconds);
             if (startYear == todayYear) {
                 
-                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffDays + " 天 " + diffHours +
-                    " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffDays + " d " + diffHours +
+                    " h " + diffMinutes + " m " + diffSeconds + " s";
             } else {
                 
-                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffYears + " 年 " + diffDays +
-                    " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                document.getElementById("sitetime").innerHTML = "Blog Running  " + diffYears + " y " + diffDays +
+                    " d " + diffHours + " h " + diffMinutes + " m " + diffSeconds + " s";
             }
         }
         setInterval(siteTime, 1000);
       </script>
-      <span id="sitetime">载入运行时间...</span>
-      <li class="mr-3 mr-lg-0">Welcome to My <a href='https://luvsia.com'>Blog</a></li>
+      <span id="sitetime">Reloading...</span>
+      <span id="busuanzi_container_site_uv">
+        Visited<span id="busuanzi_value_site_uv"></span> times
+      </span>
+      <li class="mr-3 mr-lg-0">© 2022 Ventus 丨 Welcome to My <a href='https://luvsia.com'>Blog</a></li>
       
     </ul>
   </div>

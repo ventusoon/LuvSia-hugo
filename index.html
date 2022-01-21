@@ -2,6 +2,15 @@
 <html lang="zh-cn">
 <head>
 	<meta name="generator" content="Hugo 0.92.0" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W148242GYC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-W148242GYC');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script type="application/javascript" src='https://luvsia.com/js/theme-mode.js'></script>
@@ -510,9 +519,9 @@
 </ul>
 <h2 id="repohttpsgithubcomventusoontabrepositories"><a href="https://github.com/ventusoon?tab=repositories">Repo</a></h2>
 <ul>
-<li><a href="https://github.com/ventusoon/LuvSia">LuvSia</a>: A first page, some tips of building server.</li>
-<li><a href="https://github.com/ventusoon/ventus">ventus</a>: Personal of Surge4 Configuration.</li>
+<li><a href="https://github.com/ventusoon/ServerBuilding">ServerBuilding</a>: A first page, some tips of building server.</li>
 <li><a href="https://github.com/ventusoon/Outbounds-IP-Unlock-Netflix">Outbounds-IP-Unlock-Netflix</a>: Unlock Netflix.</li>
+<li><a href="https://github.com/ventusoon/ventus">ventus</a>: Personal of Surge4 Configuration.</li>
 </ul>
 <h2 id="build-this-siteposthello-world"><a href="/post/hello-world/">Build this site</a></h2>
 <ul>
@@ -741,18 +750,21 @@ else {
                 diffMinutes * minutes) / seconds);
             if (startYear == todayYear) {
                 
-                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffDays + " 天 " + diffHours +
-                    " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffDays + " d " + diffHours +
+                    " h " + diffMinutes + " m " + diffSeconds + " s";
             } else {
                 
-                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffYears + " 年 " + diffDays +
-                    " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                document.getElementById("sitetime").innerHTML = "Blog Running  " + diffYears + " y " + diffDays +
+                    " d " + diffHours + " h " + diffMinutes + " m " + diffSeconds + " s";
             }
         }
         setInterval(siteTime, 1000);
       </script>
-      <span id="sitetime">载入运行时间...</span>
-      <li class="mr-3 mr-lg-0">Welcome to My <a href='https://luvsia.com'>Blog</a></li>
+      <span id="sitetime">Reloading...</span>
+      <span id="busuanzi_container_site_uv">
+        Visited<span id="busuanzi_value_site_uv"></span> times
+      </span>
+      <li class="mr-3 mr-lg-0">© 2022 Ventus 丨 Welcome to My <a href='https://luvsia.com'>Blog</a></li>
       
     </ul>
   </div>

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W148242GYC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-W148242GYC');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script type="application/javascript" src='https://luvsia.com/js/theme-mode.js'></script>
@@ -18,7 +27,7 @@
 
     
     <meta name="description"
-  content="Skills  Python Rust C/C&#43;&#43; Node HTML / JavaScript / CSS Ctrl&#43;C ✔ Ctrl&#43;V ✔ Ignorance ✔ A loser ✔  Link  GitHub: Ventus Twitter: Ventus Blog: LuvSia.com Email: ventusyu@gmail.com  Repo  LuvSia: A first page, some tips of building server. ventus: Personal of Surge4 Configuration. Outbounds-IP-Unlock-Netflix: Unlock Netflix.  Build this site  Hugo github-style GitHub Pages Cloudflare  " />
+  content="Skills  Python Rust C/C&#43;&#43; Node HTML / JavaScript / CSS Ctrl&#43;C ✔ Ctrl&#43;V ✔ Ignorance ✔ A loser ✔  Link  GitHub: Ventus Twitter: Ventus Blog: LuvSia.com Email: ventusyu@gmail.com  Repo  ServerBuilding: A first page, some tips of building server. Outbounds-IP-Unlock-Netflix: Unlock Netflix. ventus: Personal of Surge4 Configuration.  Build this site  Hugo github-style GitHub Pages Cloudflare  " />
 <meta name="keywords"
   content='blog, google analytics' />
 <meta name="robots" content="noodp" />
@@ -28,7 +37,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="README - Ventus&#39; blog" />
 <meta name="twitter:description"
-  content="Skills  Python Rust C/C&#43;&#43; Node HTML / JavaScript / CSS Ctrl&#43;C ✔ Ctrl&#43;V ✔ Ignorance ✔ A loser ✔  Link  GitHub: Ventus Twitter: Ventus Blog: LuvSia.com Email: ventusyu@gmail.com  Repo  LuvSia: A first page, some tips of building server. ventus: Personal of Surge4 Configuration. Outbounds-IP-Unlock-Netflix: Unlock Netflix.  Build this site  Hugo github-style GitHub Pages Cloudflare  " />
+  content="Skills  Python Rust C/C&#43;&#43; Node HTML / JavaScript / CSS Ctrl&#43;C ✔ Ctrl&#43;V ✔ Ignorance ✔ A loser ✔  Link  GitHub: Ventus Twitter: Ventus Blog: LuvSia.com Email: ventusyu@gmail.com  Repo  ServerBuilding: A first page, some tips of building server. Outbounds-IP-Unlock-Netflix: Unlock Netflix. ventus: Personal of Surge4 Configuration.  Build this site  Hugo github-style GitHub Pages Cloudflare  " />
 <meta name="twitter:site" content="https://luvsia.com" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image"
@@ -38,7 +47,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="README - Ventus&#39; blog">
 <meta property="og:description"
-  content="Skills  Python Rust C/C&#43;&#43; Node HTML / JavaScript / CSS Ctrl&#43;C ✔ Ctrl&#43;V ✔ Ignorance ✔ A loser ✔  Link  GitHub: Ventus Twitter: Ventus Blog: LuvSia.com Email: ventusyu@gmail.com  Repo  LuvSia: A first page, some tips of building server. ventus: Personal of Surge4 Configuration. Outbounds-IP-Unlock-Netflix: Unlock Netflix.  Build this site  Hugo github-style GitHub Pages Cloudflare  " />
+  content="Skills  Python Rust C/C&#43;&#43; Node HTML / JavaScript / CSS Ctrl&#43;C ✔ Ctrl&#43;V ✔ Ignorance ✔ A loser ✔  Link  GitHub: Ventus Twitter: Ventus Blog: LuvSia.com Email: ventusyu@gmail.com  Repo  ServerBuilding: A first page, some tips of building server. Outbounds-IP-Unlock-Netflix: Unlock Netflix. ventus: Personal of Surge4 Configuration.  Build this site  Hugo github-style GitHub Pages Cloudflare  " />
 <meta property="og:url" content="https://luvsia.com/readme/" />
 <meta property="og:site_name" content="README" />
 <meta property="og:image"
@@ -152,9 +161,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Fri, 21 Jan 2022 03:20:25 &#43;0000"
+                  Modified <relative-time datetime="Fri, 21 Jan 2022 04:17:05 &#43;0000"
                     class="no-wrap">
-                    Fri, 21 Jan 2022 03:20:25 &#43;0000</relative-time>
+                    Fri, 21 Jan 2022 04:17:05 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -211,9 +220,9 @@
 </ul>
 <h2 id="repohttpsgithubcomventusoontabrepositories"><a href="https://github.com/ventusoon?tab=repositories">Repo</a></h2>
 <ul>
-<li><a href="https://github.com/ventusoon/LuvSia">LuvSia</a>: A first page, some tips of building server.</li>
-<li><a href="https://github.com/ventusoon/ventus">ventus</a>: Personal of Surge4 Configuration.</li>
+<li><a href="https://github.com/ventusoon/ServerBuilding">ServerBuilding</a>: A first page, some tips of building server.</li>
 <li><a href="https://github.com/ventusoon/Outbounds-IP-Unlock-Netflix">Outbounds-IP-Unlock-Netflix</a>: Unlock Netflix.</li>
+<li><a href="https://github.com/ventusoon/ventus">ventus</a>: Personal of Surge4 Configuration.</li>
 </ul>
 <h2 id="build-this-siteposthello-world"><a href="/post/hello-world/">Build this site</a></h2>
 <ul>
@@ -340,18 +349,21 @@
                 diffMinutes * minutes) / seconds);
             if (startYear == todayYear) {
                 
-                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffDays + " 天 " + diffHours +
-                    " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffDays + " d " + diffHours +
+                    " h " + diffMinutes + " m " + diffSeconds + " s";
             } else {
                 
-                document.getElementById("sitetime").innerHTML = "Blog 运行  " + diffYears + " 年 " + diffDays +
-                    " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                document.getElementById("sitetime").innerHTML = "Blog Running  " + diffYears + " y " + diffDays +
+                    " d " + diffHours + " h " + diffMinutes + " m " + diffSeconds + " s";
             }
         }
         setInterval(siteTime, 1000);
       </script>
-      <span id="sitetime">载入运行时间...</span>
-      <li class="mr-3 mr-lg-0">Welcome to My <a href='https://luvsia.com'>Blog</a></li>
+      <span id="sitetime">Reloading...</span>
+      <span id="busuanzi_container_site_uv">
+        Visited<span id="busuanzi_value_site_uv"></span> times
+      </span>
+      <li class="mr-3 mr-lg-0">© 2022 Ventus 丨 Welcome to My <a href='https://luvsia.com'>Blog</a></li>
       
     </ul>
   </div>

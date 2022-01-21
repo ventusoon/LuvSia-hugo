@@ -5,6 +5,25 @@
     <link>https://luvsia.com/tags/</link>
     <description>Recent content in Tags on Ventus&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://luvsia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Jan 2022 09:56:09 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://luvsia.com/tags/blog/</link>
+      <pubDate>Thu, 20 Jan 2022 09:56:09 +0800</pubDate>
+      
+      <guid>https://luvsia.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>https://luvsia.com/tags/server/</link>
+      <pubDate>Thu, 20 Jan 2022 09:56:09 +0800</pubDate>
+      
+      <guid>https://luvsia.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

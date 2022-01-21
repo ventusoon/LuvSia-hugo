@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on Ventus&#39; blog</title>
+    <link>https://luvsia.com/tags/server/</link>
+    <description>Recent content in Server on Ventus&#39; blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Jan 2022 09:56:09 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://luvsia.com/post/hello-world/</link>
+      <pubDate>Thu, 20 Jan 2022 09:56:09 +0800</pubDate>
+      
+      <guid>https://luvsia.com/post/hello-world/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Build this site&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>从零开始的服务器搭建纪实</title>
+      <link>https://luvsia.com/post/server-building/</link>
+      <pubDate>Wed, 19 Jan 2022 23:58:22 +0800</pubDate>
+      
+      <guid>https://luvsia.com/post/server-building/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;LuvSia&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Server Building&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

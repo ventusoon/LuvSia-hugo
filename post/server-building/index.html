@@ -1,0 +1,546 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<script type=application/javascript src=www.luvsia.com/js/theme-mode.js></script>
+<link rel=stylesheet href=www.luvsia.com/css/frameworks.min.css>
+<link rel=stylesheet href=www.luvsia.com/css/github.min.css>
+<link rel=stylesheet href=www.luvsia.com/css/github-style.css>
+<link rel=stylesheet href=www.luvsia.com/css/light.css>
+<link rel=stylesheet href=www.luvsia.com/css/dark.css>
+<link rel=stylesheet href=www.luvsia.com/css/syntax.css>
+<title>从零开始的服务器搭建纪实 - Ventus' blog</title>
+<link rel=icon type=image/x-icon href=/images/github.png>
+<meta name=theme-color content="#1e2327">
+<meta name=description content="LuvSia
+Server Building
+">
+<meta name=keywords content="server">
+<meta name=robots content="noodp">
+<link rel=canonical href=www.luvsia.com/post/server-building/>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="从零开始的服务器搭建纪实 - Ventus' blog">
+<meta name=twitter:description content="LuvSia
+Server Building
+">
+<meta name=twitter:site content="www.luvsia.com">
+<meta name=twitter:creator content="ventus">
+<meta name=twitter:image content="www.luvsia.com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始的服务器搭建纪实 - Ventus' blog">
+<meta property="og:description" content="LuvSia
+Server Building
+">
+<meta property="og:url" content="www.luvsia.com/post/server-building/">
+<meta property="og:site_name" content="从零开始的服务器搭建纪实">
+<meta property="og:image" content="www.luvsia.com">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+<meta property="article:published_time" content="2022-01-19 23:58:22 +0800 +0800">
+</head>
+<body>
+<div style=position:relative>
+<header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+<div class="Header-item mobile-none" style=margin-top:-4px;margin-bottom:-4px>
+<a class=Header-link href=www.luvsia.com><svg class="octicon" height="32" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+</div>
+<div class="Header-item d-md-none">
+<button class="Header-link btn-link js-details-target" type=button onclick="document.querySelector('#header-search').style.display=document.querySelector('#header-search').style.display=='none'?'block':'none'"><svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M1 2.75A.75.75.0 011.75 2h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 2.75zm0 5A.75.75.0 011.75 7h12.5a.75.75.0 110 1.5H1.75A.75.75.0 011 7.75zM1.75 12a.75.75.0 100 1.5h12.5a.75.75.0 100-1.5H1.75z"/></svg>
+</button>
+</div>
+<div style=display:none id=header-search class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+<div class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+<div class=position-relative>
+<form target=_blank action=https://www.google.com/search accept-charset=utf-8 method=get autocomplete=off>
+<label class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+<input type=text class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" name=q placeholder=Search autocomplete=off>
+<input type=hidden name=q value=site:www.luvsia.com>
+</label>
+</form>
+</div>
+</div>
+</div>
+<div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+<a class=Header-link href=www.luvsia.com><svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+</div>
+<div class=Header-item style=margin-right:0>
+<a href=javascript:void(0) class="Header-link no-select" onclick=switchTheme()><svg style="fill:var(--color-profile-color-modes-toggle-moon)" class="no-select" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.52208 7.71754c3.05612.0 5.53362-2.47748 5.53362-5.5336C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961 9.95801 1.07727 10.3495.771159 10.6474.99992c1.4679 1.12724 2.4141 2.90007 2.4141 4.89391.0 3.40575-2.7609 6.16667-6.16665 6.16667-2.94151.0-5.40199-2.0595-6.018122-4.81523C.794841 6.87902 1.23668 6.65289 1.55321 6.85451 2.41106 7.40095 3.4296 7.71754 4.52208 7.71754z"/></svg>
+</a>
+</div>
+</header>
+</div>
+<script src=https://unpkg.com/@popperjs/core@2></script>
+<script src=https://unpkg.com/tippy.js@6></script>
+<div>
+<main>
+<div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+<div class=px-0>
+<div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+<div class="flex-auto min-width-0 width-fit mr-3">
+<div class=d-flex>
+<div class="d-none d-md-block">
+<a class="avatar mr-2 flex-shrink-0" href=www.luvsia.com>
+<img class=avatar-user src=www.luvsia.com/images/avatar.png width=32 height=32></a>
+</div>
+<div class="d-flex flex-column">
+<h1 class="break-word f3 text-normal mb-md-0 mb-1">
+<span class=author>
+<a href=www.luvsia.com>ventus</a></span><span class=path-divider>/</span><strong class="css-truncate-target mr-1" style=max-width:410px><a href=www.luvsia.com/post/server-building/>从零开始的服务器搭建纪实</a></strong>
+</h1>
+<div class="note m-0">
+Created <relative-time datetime="Wed, 19 Jan 2022 23:58:22 +0800" class=no-wrap>
+Wed, 19 Jan 2022 23:58:22 +0800</relative-time>
+<span class=file-info-divider></span>
+Modified <relative-time datetime="Fri, 21 Jan 2022 02:11:16 +0000" class=no-wrap>
+Fri, 21 Jan 2022 02:11:16 +0000</relative-time>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-lg px-3 new-discussion-timeline">
+<div class="repository-content gist-content">
+<div>
+<div class="js-gist-file-update-container js-task-list-container file-box">
+<div id=file-pytest class="file my-2">
+<div id=post-header class="file-header d-flex flex-md-items-center flex-items-start sticky-header">
+<div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+<div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+<summary id=toc-toggle class="btn btn-octicon m-0 mr-2 p-2" aria-haspopup=menu aria-label="Table of Contents" role=button><svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered"><path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zm0 5a.75.75.0 000 1.5h8.5a.75.75.0 000-1.5h-8.5zM3 8A1 1 0 111 8a1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"/></svg>
+</summary>
+1906 Words
+</div>
+<div class="file-actions flex-order-2 pt-0">
+</div>
+</div>
+</div>
+<div class="Box-body px-5 pb-5">
+<article class="markdown-body entry-content container-lg"><p><em><strong>LuvSia</strong></em></p>
+<p><em><strong>Server Building</strong></em></p>
+<ul>
+<li><strong>目录</strong>
+<ul>
+<li><a href=#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C>准备工作</a></li>
+<li><a href=#%E6%90%AD%E5%BB%BA%E6%80%9D%E8%B7%AF>搭建思路</a></li>
+<li><a href=#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA>开始搭建</a>
+<ul>
+<li><a href=#%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF>宝塔面板</a></li>
+<li><a href=#x-ui>X-UI</a></li>
+<li><a href=#alist>Alist</a></li>
+<li><a href=#transmission>Transmission</a>
+<ul>
+<li><a href=#1docker%E5%AE%89%E8%A3%85>1.Docker安装</a></li>
+<li><a href=#2-1%E6%99%AE%E9%80%9A%E5%AE%89%E8%A3%85>2-1.普通安装</a></li>
+<li><a href=#2-2transmission-web-control%E7%BE%8E%E5%8C%96>2-2.transmission-web-control美化</a></li>
+</ul>
+</li>
+<li><a href=#rclone>Rclone</a></li>
+<li><a href=#live-torrent>Live-torrent</a></li>
+<li><a href=#cloudflare-warp>Cloudflare WARP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#%E5%90%8E%E8%AE%B0>后记</a></li>
+<li><a href=#%E6%84%9F%E8%B0%A2>感谢</a></li>
+</ul>
+<h2 id=准备工作>准备工作</h2>
+<table>
+<thead>
+<tr>
+<th>VPS</th>
+<th style=text-align:center>Domain</th>
+<th style=text-align:center></th>
+<th style=text-align:center></th>
+<th style=text-align:center></th>
+<th style=text-align:center></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://www.dmit.io><img src=/images/server-building/dmit.png alt=dmit title></a></td>
+<td style=text-align:center>example.com</td>
+<td style=text-align:center><a href=https://www.nginx.com><img src=/images/server-building/nginx.png alt=nginx title=nginx></a></td>
+<td style=text-align:center><a href=https://www.mysql.com><img src=/images/server-building/mysql.png alt=mysql title=mysql></a></td>
+<td style=text-align:center><a href=https://www.php.net><img src=/images/server-building/php.png alt=php title=php></a></td>
+<td style=text-align:center><a href=https://www.phpmyadmin.net><img src=/images/server-building/phpmyadmin.png alt=phpmyadmin title=phpmyadmin></a></td>
+<td style=text-align:center><a href=https://www.cloudflare.com><img src=/images/server-building/cloudflare.png alt=cloudflare title></a></td>
+</tr>
+</tbody>
+</table>
+<p><em>更新软件源</em></p>
+<pre tabindex=0><code>apt update
+</code></pre><h2 id=搭建思路>搭建思路</h2>
+<p><strong>预留一级域名搭建网站</strong>，<strong><del>给各个应用添加前端网页根路径。</del></strong></p>
+<p><strong>后因部分应用无法添加<code>二级目录</code>（网页根路径），所以这里只能使用添加<code>二级域名</code>的思路，区别各个应用。</strong></p>
+<p><strong>再通过添加<code>反向代理</code>，实现分域名访问不同前端应用。</strong></p>
+<h2 id=开始搭建>开始搭建</h2>
+<h3 id=宝塔面板>宝塔面板</h3>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>Work</th>
+<th style=text-align:center>Web</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>宝塔面板</td>
+<td style=text-align:center><a href=https://www.hostcli.com><img src=/images/server-building/bt.png alt=bt title=宝塔面板></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.使用一键配置工具。</strong>
+一键脚本集成工具</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>wget --no-check-certificate https://raw.githubusercontent.com/jinwyp/one_click_script/master/trojan_v2ray_install.sh <span class=o>&amp;&amp;</span> chmod +x ./trojan_v2ray_install.sh <span class=o>&amp;&amp;</span> ./trojan_v2ray_install.sh
+</code></pre></div><p>或</p>
+<pre tabindex=0><code>wget -O install.sh http://download.yu.al/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh
+</code></pre><p><strong>2.安装<code>nginx-1.21</code>、<code>mysql-5.5</code>、<code>php-7.4</code>、<code>phpmyadmin-5.0</code>四件套</strong></p>
+<p><strong>3.添加站点。</strong></p>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Domain</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alist</td>
+<td>a.example.com</td>
+<td style=text-align:center><strong>正常</strong></td>
+</tr>
+<tr>
+<td>宝塔面板</td>
+<td>b.example.com</td>
+<td style=text-align:center><strong>正常</strong></td>
+</tr>
+<tr>
+<td>Transmission</td>
+<td>t.example.com</td>
+<td style=text-align:center><strong>正常</strong></td>
+</tr>
+<tr>
+<td>X-UI</td>
+<td>x.example.com</td>
+<td style=text-align:center><strong>正常</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>4.设置，添加SSL，<code>强制开启https</code>。</strong></p>
+<p><strong>记录<code>证书路径</code>，证书可以直接在<code>宝塔面板</code>进行更新，或是设置定时任务自动更新;</strong></p>
+<p><strong><code>宝塔面板</code>申请的证书在如下目录：<code>/www/server/panel/vhost/cert/你的域名/</code> 目录之下。</strong></p>
+<p><em><strong><code>强制开启https</code></strong></em>。</p>
+<p><strong>5.关闭面板<code>安全入户</code>，即删除<code>二级目录</code>。</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=n>rm</span> <span class=o>-</span><span class=n>f</span> <span class=o>/</span><span class=n>www</span><span class=o>/</span><span class=n>server</span><span class=o>/</span><span class=n>panel</span><span class=o>/</span><span class=n>data</span><span class=o>/</span><span class=n>admin_path</span><span class=p>.</span><span class=n>pl</span>
+</code></pre></div><p><strong>6.在<code>Cloudflare</code>中解析二级域名<code>b.example.com</code></strong></p>
+<p><strong>7.添加反向代理到<code>b.example.com</code></strong></p>
+<pre tabindex=0><code>代理名称 宝塔面板
+目标URL  http://127.0.0.1:8888  发送域名 $host
+</code></pre><p><strong>8.安装<code>docker</code>安装器。</strong></p>
+<h3 id=x-ui>X-UI</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Web</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-ui</td>
+<td><a href=https://github.com/vaxilu/x-ui><img src=/images/server-building/xui.png alt=xui title=xui></a></td>
+<td><a href=https://hub.docker.com/r/enwaiax/x-ui><img src=/images/server-building/docker.png alt=docker title></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.镜像源</strong></p>
+<pre tabindex=0><code>enwaiax/x-ui:latest
+</code></pre><p><strong>2.安装运行</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mkdir x-ui <span class=o>&amp;&amp;</span> <span class=nb>cd</span> x-ui
+docker run -itd --network<span class=o>=</span>host <span class=se>\
+</span><span class=se></span>    -v <span class=nv>$PWD</span>/db/:/etc/x-ui/ <span class=se>\
+</span><span class=se></span>    -v <span class=nv>$PWD</span>/cert/:/root/cert/ <span class=se>\
+</span><span class=se></span>    --name x-ui --restart<span class=o>=</span>unless-stopped <span class=se>\
+</span><span class=se></span>    enwaiax/x-ui:latest
+</code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>x.example.com</code></strong></p>
+<p><strong>4.添加反向代理到<code>x.example.com</code></strong></p>
+<pre tabindex=0><code>代理名称 x-ui
+目标URL  http://127.0.0.1:54321  发送域名 $host
+</code></pre><p><strong>5.配置<code>VMess</code>协议，开启<code>ws</code>，路径<code>/xiya</code>。</strong></p>
+<p><strong>6.开启CDN加速，在<code>nginx</code>配置文件中添加如下。</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>location</span> <span class=o>/</span><span class=nx>xiya</span> <span class=p>{</span>
+        <span class=nx>proxy_redirect</span> <span class=nx>off</span><span class=p>;</span>
+        <span class=nx>proxy_pass</span> <span class=nx>http</span><span class=o>:</span><span class=c1>//127.0.0.1:22513;
+</span><span class=c1></span>        <span class=nx>proxy_http_version</span> <span class=mf>1.1</span><span class=p>;</span>
+        <span class=nx>proxy_set_header</span> <span class=nx>Upgrade</span> <span class=nx>$http_upgrade</span><span class=p>;</span>
+        <span class=nx>proxy_set_header</span> <span class=nx>Connection</span> <span class=s2>&#34;upgrade&#34;</span><span class=p>;</span>
+        <span class=nx>proxy_set_header</span> <span class=nx>Host</span> <span class=nx>$http_host</span><span class=p>;</span>
+        <span class=nx>proxy_read_timeout</span> <span class=mi>300</span><span class=nx>s</span><span class=p>;</span>
+        <span class=err>#</span> <span class=nx>Show</span> <span class=nx>realip</span> <span class=k>in</span> <span class=nx>v2ray</span> <span class=nx>access</span><span class=p>.</span><span class=nx>log</span>
+        <span class=nx>proxy_set_header</span> <span class=nx>X</span><span class=o>-</span><span class=nx>Real</span><span class=o>-</span><span class=nx>IP</span> <span class=nx>$remote_addr</span><span class=p>;</span>
+        <span class=nx>proxy_set_header</span> <span class=nx>X</span><span class=o>-</span><span class=nx>Forwarded</span><span class=o>-</span><span class=nx>For</span> <span class=nx>$proxy_add_x_forwarded_for</span><span class=p>;</span>
+  <span class=p>}</span>
+</code></pre></div><p><strong>7.开启<code>Cloudflare</code>小云朵，并优选IP。</strong></p>
+<p><strong>8.<a href=https://github.com/XIU2/CloudflareSpeedTest/releases>下载优选IP</a> ，选出优选IP后，客户端如下配置</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-diff data-lang=diff><span class=gd>-填入优选IP
+</span><span class=gd>-更改端口为443；
+</span><span class=gd>-host设置x.example.com；
+</span><span class=gd>-开启tls。
+</span></code></pre></div><p><strong>9.Surge配置</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=err>🇭🇰</span> <span class=n>VMess</span> <span class=o>=</span> <span class=n>vmess</span><span class=o>,</span> <span class=n>104</span><span class=o>.</span><span class=na>19</span><span class=o>.</span><span class=na>79</span><span class=o>.</span><span class=na>223</span><span class=o>,</span> <span class=n>443</span><span class=o>,</span> <span class=n>username</span><span class=o>=</span><span class=n>2d285385</span><span class=o>-</span><span class=n>836d</span><span class=o>-</span><span class=n>4b30</span><span class=o>-</span><span class=n>f32c</span><span class=o>-</span><span class=n>11cdd637aeed</span><span class=o>,</span> <span class=n>tls</span><span class=o>=</span><span class=kc>true</span><span class=o>,</span> <span class=n>tls13</span><span class=o>=</span><span class=kc>false</span><span class=o>,</span> <span class=n>ws</span><span class=o>=</span><span class=kc>true</span><span class=o>,</span> <span class=n>ws</span><span class=o>-</span><span class=n>path</span><span class=o>=/</span><span class=n>xiya</span><span class=o>,</span> <span class=n>sni</span><span class=o>=</span><span class=n>example</span><span class=o>.</span><span class=na>com</span><span class=o>,</span> <span class=n>ws</span><span class=o>-</span><span class=n>headers</span><span class=o>=</span><span class=n>Host</span><span class=o>:</span><span class=n>example</span><span class=o>.</span><span class=na>com</span><span class=o>,</span> <span class=n>skip</span><span class=o>-</span><span class=n>cert</span><span class=o>-</span><span class=n>verify</span><span class=o>=</span><span class=n>0</span><span class=o>,</span> <span class=n>tfo</span><span class=o>=</span><span class=kc>false</span><span class=o>,</span> <span class=n>udp</span><span class=o>-</span><span class=n>relay</span><span class=o>=</span><span class=kc>true</span>
+</code></pre></div><h3 id=alist>Alist</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Web</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alist</td>
+<td><a href=https://github.com/Xhofe/alist><img src=/images/server-building/alist.png alt=alist title=alist></a></td>
+<td><a href=https://hub.docker.com/r/xhofe/alist><img src=/images/server-building/docker.png alt=docker title></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.添加镜像源</strong></p>
+<pre tabindex=0><code>xhofe/alist:latest
+</code></pre><p><strong>2.不配置容器，使用代码</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>docker</span> <span class=nx>run</span> <span class=o>-</span><span class=nx>d</span> <span class=o>--</span><span class=nx>restart</span><span class=o>=</span><span class=nx>always</span> <span class=o>-</span><span class=nx>v</span> <span class=o>/</span><span class=nx>etc</span><span class=o>/</span><span class=nx>alist</span><span class=o>:</span><span class=err>/opt/alist/data -p 5244:5244 --name=&#34;alist&#34; xhofe/alist:latest</span>
+</code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>a.example.com</code></strong></p>
+<p><strong>4.添加反向代理到a.example.com</strong></p>
+<pre tabindex=0><code>代理名称 alist
+目标URL  http://127.0.0.1:5244  发送域名 $host
+</code></pre><h3 id=transmission>Transmission</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Web</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transmission</td>
+<td><a href=https://github.com/helloxz/docker-transmission><img src=/images/server-building/transmission.png alt=transmission title=transmission></a></td>
+<td><a href=https://hub.docker.com/r/helloz/transmission><img src=/images/server-building/docker.png alt=docker title></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id=1docker安装>1.Docker安装</h4>
+<p><strong>构建镜像</strong></p>
+<pre tabindex=0><code># 克隆仓库
+git clone https://github.com/helloxz/docker-transmission.git
+# 进入仓库目录
+cd docker-transmission
+# 构建Docker镜像
+docker build -t luvsia:transmission
+</code></pre><p><strong>运行镜像</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>docker</span> <span class=nx>run</span> <span class=o>-</span><span class=nx>d</span> <span class=o>--</span><span class=nx>name</span><span class=o>=</span><span class=s2>&#34;transmission&#34;</span> <span class=o>\</span>
+  <span class=o>-</span><span class=nx>e</span> <span class=nx>USERNAME</span><span class=o>=</span><span class=nx>ventus</span> <span class=o>\</span>
+  <span class=o>-</span><span class=nx>e</span> <span class=nx>PASSWORD</span><span class=o>=</span><span class=nx>ysw554247430</span> <span class=o>\</span>
+  <span class=o>-</span><span class=nx>p</span> <span class=mi>9091</span><span class=o>:</span><span class=mi>9091</span> <span class=o>\</span>
+  <span class=o>-</span><span class=nx>p</span> <span class=mi>51413</span><span class=o>:</span><span class=mi>51413</span> <span class=o>\</span>
+  <span class=o>-</span><span class=nx>p</span> <span class=mi>51413</span><span class=o>:</span><span class=mi>51413</span><span class=o>/</span><span class=nx>udp</span> <span class=o>\</span>
+  <span class=o>-</span><span class=nx>v</span> <span class=o>/</span><span class=nx>GoogleDrive</span><span class=o>:</span><span class=err>/Downloads \</span>
+  <span class=o>--</span><span class=nx>restart</span><span class=o>=</span><span class=nx>always</span> <span class=o>\</span>
+  <span class=nx>luvsia</span><span class=o>:</span><span class=nx>transmission</span>
+</code></pre></div><p><strong>/GoogleDrive:本地下载目录为<a href=#Rclone-mount-GoogleDrive><code>Rclone</code> mount <code>GoogleDrive</code></a>中的谷歌云盘目录，自动下载到谷歌云盘，实现无线网盘</strong></p>
+<h4 id=2-1普通安装>2-1.普通安装</h4>
+<p><strong>安装transmission-daemon</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=n>apt</span><span class=o>-</span><span class=n>get</span> <span class=n>install</span> <span class=n>transmission</span><span class=o>-</span><span class=n>daemon</span>
+</code></pre></div><p><strong>首先执行一次启动和停止命令，防止配置文件被覆盖</strong></p>
+<p>启动</p>
+<pre tabindex=0><code>service transmission-daemon start
+</code></pre><p>停止</p>
+<pre tabindex=0><code>service transmission-daemon stop
+</code></pre><p>重启</p>
+<pre tabindex=0><code>service transmission-daemon restart
+</code></pre><p><strong>修改transmission-daemon配置文件</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=n>nano</span> <span class=o>/</span><span class=n>var</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>transmission</span><span class=o>-</span><span class=n>daemon</span><span class=o>/</span><span class=n>info</span><span class=o>/</span><span class=n>settings</span><span class=p>.</span><span class=n>json</span>
+</code></pre></div><pre tabindex=0><code>&quot;rpc-host-whitelist&quot;: &quot;*&quot;,  //域名白名单，*为允许所有
+&quot;rpc-host-whitelist-enabled&quot;: false, //是否开启白名单，false为否
+&quot;rpc-password&quot;: &quot;远程登录密码&quot;,
+&quot;rpc-port&quot;: 9091, //远程登录端口
+&quot;rpc-username&quot;: &quot;远程帐号&quot;,
+&quot;rpc-whitelist&quot;: &quot;*&quot;, //ip白名单
+&quot;rpc-whitelist-enabled&quot;: false,  //是否开启ip白名单，false为否
+</code></pre><p><strong>执行启动命令</strong></p>
+<pre tabindex=0><code>service transmission-daemon start
+</code></pre><h4 id=2-2transmission-web-controlhttpsgithubcomronggangtransmission-web-controlwikilinux-installation-cn美化>2-2.<a href=https://github.com/ronggang/transmission-web-control/wiki/Linux-Installation-CN>transmission-web-control</a>美化</h4>
+<p><strong>获取安装脚本</strong></p>
+<pre tabindex=0><code>wget https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
+</code></pre><p><strong>执行安装脚本</strong></p>
+<pre tabindex=0><code>bash install-tr-control-cn.sh
+</code></pre><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>t.example.com</code></strong></p>
+<p><strong>4.添加反向代理到t.example.com</strong></p>
+<pre tabindex=0><code>代理名称 transmission
+目标URL  http://127.0.0.1:9091  发送域名 $host
+</code></pre><p><strong>5.修改默认保存目录<code>/GoogleDrive</code>，启用临时目录<code>/Downloads</code>，记得给<code>!权限!</code></strong></p>
+<h3 id=rclone>Rclone</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Web</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rclone</td>
+<td><a href=https://github.com/rclone/rclone><img src=/images/server-building/rclone.png alt=rclone title=rclone></a></td>
+<td><a href=https://drive.google.com><img src=/images/server-building/googledrive.png alt=googledrive title></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.安装<code>Rclone</code></strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>wget https://www.moerats.com/usr/shell/rclone_debian.sh <span class=o>&amp;&amp;</span> bash rclone_debian.sh
+</code></pre></div><p><strong>2.初始化配置</strong></p>
+<pre tabindex=0><code>rclone config
+</code></pre><p><strong>3.选择<code>GoogleDrive</code>，剩余操作参考<a href=https://www.moerats.com/archives/491/>这里</a></strong></p>
+<p><strong>4.挂载磁盘</strong></p>
+<pre tabindex=0><code>mkdir -p /GoogleDrive
+</code></pre><pre tabindex=0><code>mkdir -p /Downloads
+</code></pre><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=err>/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
+ <span class=o>--</span><span class=nx>umask</span> <span class=mi>0000</span> <span class=o>\</span>
+ <span class=o>--</span><span class=k>default</span><span class=o>-</span><span class=nx>permissions</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>allow</span><span class=o>-</span><span class=nx>non</span><span class=o>-</span><span class=nx>empty</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>allow</span><span class=o>-</span><span class=nx>other</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>transfers</span> <span class=mi>4</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>buffer</span><span class=o>-</span><span class=nx>size</span> <span class=mi>32</span><span class=nx>M</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>low</span><span class=o>-</span><span class=nx>level</span><span class=o>-</span><span class=nx>retries</span> <span class=mi>200</span>
+ <span class=o>--</span><span class=nx>dir</span><span class=o>-</span><span class=nx>cache</span><span class=o>-</span><span class=nx>time</span> <span class=mi>12</span><span class=nx>h</span>
+ <span class=o>--</span><span class=nx>vfs</span><span class=o>-</span><span class=nx>read</span><span class=o>-</span><span class=nx>chunk</span><span class=o>-</span><span class=nx>size</span> <span class=mi>32</span><span class=nx>M</span>
+ <span class=o>--</span><span class=nx>vfs</span><span class=o>-</span><span class=nx>read</span><span class=o>-</span><span class=nx>chunk</span><span class=o>-</span><span class=nx>size</span><span class=o>-</span><span class=nx>limit</span> <span class=mi>1</span><span class=nx>G</span>
+</code></pre></div><p><strong>5.配置开机自动挂载</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>cat</span> <span class=o>&gt;</span> <span class=err>/etc/systemd/system/rclone.service &lt;&lt;EOF</span>
+<span class=p>[</span><span class=nx>Unit</span><span class=p>]</span>
+<span class=nx>Description</span><span class=o>=</span><span class=nx>Rclone</span>
+<span class=nx>AssertPathIsDirectory</span><span class=o>=</span><span class=nx>LocalFolder</span>
+<span class=nx>After</span><span class=o>=</span><span class=nx>network</span><span class=o>-</span><span class=nx>online</span><span class=p>.</span><span class=nx>target</span>
+<span class=p>[</span><span class=nx>Service</span><span class=p>]</span>
+<span class=nx>Type</span><span class=o>=</span><span class=nx>simple</span>
+<span class=nx>ExecStart</span><span class=o>=</span><span class=err>/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
+ <span class=o>--</span><span class=nx>umask</span> <span class=mi>0000</span> <span class=o>\</span>
+ <span class=o>--</span><span class=k>default</span><span class=o>-</span><span class=nx>permissions</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>allow</span><span class=o>-</span><span class=nx>non</span><span class=o>-</span><span class=nx>empty</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>allow</span><span class=o>-</span><span class=nx>other</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>buffer</span><span class=o>-</span><span class=nx>size</span> <span class=mi>32</span><span class=nx>M</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>dir</span><span class=o>-</span><span class=nx>cache</span><span class=o>-</span><span class=nx>time</span> <span class=mi>12</span><span class=nx>h</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>vfs</span><span class=o>-</span><span class=nx>read</span><span class=o>-</span><span class=nx>chunk</span><span class=o>-</span><span class=nx>size</span> <span class=mi>64</span><span class=nx>M</span> <span class=o>\</span>
+ <span class=o>--</span><span class=nx>vfs</span><span class=o>-</span><span class=nx>read</span><span class=o>-</span><span class=nx>chunk</span><span class=o>-</span><span class=nx>size</span><span class=o>-</span><span class=nx>limit</span> <span class=mi>1</span><span class=nx>G</span>
+<span class=nx>ExecStop</span><span class=o>=</span><span class=err>/bin/fusermount -u LocalFolder</span>
+<span class=nx>Restart</span><span class=o>=</span><span class=nx>on</span><span class=o>-</span><span class=nx>abort</span>
+<span class=nx>User</span><span class=o>=</span><span class=nx>root</span>
+<span class=p>[</span><span class=nx>Install</span><span class=p>]</span>
+<span class=nx>WantedBy</span><span class=o>=</span><span class=k>default</span><span class=p>.</span><span class=nx>target</span>
+<span class=nx>EOF</span>
+</code></pre></div><p><strong>挂载成功后，输入<code>df -h</code>命令即可看到挂载的磁盘</strong></p>
+<p><strong>6.常用命令</strong></p>
+<pre tabindex=0><code>systemctl start rclone
+</code></pre><pre tabindex=0><code>systemctl enable rclone
+</code></pre><pre tabindex=0><code>systemctl stop rclone
+</code></pre><pre tabindex=0><code>systemctl status rclone
+</code></pre><p><strong>7.<code>Transmission</code>添加<code>rlone</code>挂载在<code>GoogleDrive</code>上的路径</strong></p>
+<pre tabindex=0><code>/GoogleDrive
+</code></pre><h3 id=live-torrent>Live-torrent</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Web</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>live-torrent</td>
+<td><a href=https://github.com/Davenchy/live-torrent><img src=/images/server-building/live-torrent.png alt=live-torrent title></a></td>
+<td><a href=https://hub.docker.com/r/helloz/transmission><img src=/images/server-building/docker.png alt=docker title></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.镜像源</strong></p>
+<pre tabindex=0><code>davenchy/live-torrent
+</code></pre><p><strong>2.安装运行</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>docker run --restart<span class=o>=</span>always --name live-torrent -d -p 8080:8080 davenchy/live-torrent
+</code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>live.example.com</code></strong></p>
+<p><strong>4.添加反向代理到<code>live.example.com</code></strong></p>
+<pre tabindex=0><code>代理名称 Live-torrent
+目标URL  http://127.0.0.1:8080  发送域名 $host
+</code></pre><h3 id=cloudflare-warp>Cloudflare WARP</h3>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Web</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloudflare WARP</td>
+<td><a href=https://github.com/P3TERX/warp.sh><img src=/images/server-building/cloudflare.png alt=cloudflare title></a></td>
+<td><a href=https://p3terx.com/archives/cloudflare-warp-configuration-script.html>使用教程</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>功能菜单</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash>bash &lt;<span class=o>(</span>curl -fsSL git.io/warp.sh<span class=o>)</span> menu
+</code></pre></div><p><strong><code>WARP WireGuard</code> 双栈全局网络</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash>bash &lt;<span class=o>(</span>curl -fsSL git.io/warp.sh<span class=o>)</span> d
+</code></pre></div><p><strong><code>IPv4</code> 网络</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash>bash &lt;<span class=o>(</span>curl -fsSL git.io/warp.sh<span class=o>)</span> <span class=m>4</span>
+</code></pre></div><p><strong><code>IPv6</code> 网络</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash>bash &lt;<span class=o>(</span>curl -fsSL git.io/warp.sh<span class=o>)</span> <span class=m>6</span>
+</code></pre></div><p><strong><code>WARP 官方客户端</code> <code>SOCKS5</code> 代理</strong></p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-Bash data-lang=Bash>bash &lt;<span class=o>(</span>curl -fsSL git.io/warp.sh<span class=o>)</span> s5
+</code></pre></div><h1 id=后记>后记</h1>
+<h1 id=感谢>感谢</h1>
+<p><a href=https://github.com/guodongxiaren/README>@guodongxiaren</a><br>
+<a href=https://www.hostcli.com>@HostCLi</a><br>
+<a href=https://github.com/jinwyp/one_click_script>@jinwyp</a><br>
+<a href=https://github.com/Xhofe/alist>@Xhofe</a><br>
+<a href=https://github.com/vaxilu/x-ui>@vaxilu</a><br>
+<a href=https://hub.docker.com/r/enwaiax/x-ui>@enwaiax</a><br>
+<a href=https://github.com/XIU2/CloudflareSpeedTest>@XIU2</a><br>
+<a href=https://github.com/helloxz/docker-transmission>@helloxz</a><br>
+<a href=https://www.moerats.com/archives/491>@moerats</a><br>
+<a href=https://github.com/P3TERX/warp.sh>@P3TERX</a></p>
+<hr></article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>window.onload=function(){const a=document.getElementById('post-header'),b=a.offsetHeight;document.documentElement.style.scrollPaddingTop=b+10+"px"};const tocToggleButton=document.getElementById("toc-toggle"),tippyInstance=tippy('#toc-toggle',{trigger:'click',content:'<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\u0022#准备工作\u0022\u003e准备工作\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#搭建思路\u0022\u003e搭建思路\u003c/a\u003e\u003c/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#开始搭建\u0022\u003e开始搭建\u003c/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\u0022#宝塔面板\u0022\u003e宝塔面板\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#x-ui\u0022\u003eX-UI\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#alist\u0022\u003eAlist\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#transmission\u0022\u003eTransmission\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#rclone\u0022\u003eRclone\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#live-torrent\u0022\u003eLive-torrent\u003c/a\u003e\u003c/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#cloudflare-warp\u0022\u003eCloudflare WARP\u003c/a\u003e\u003c/li\u003e\n      \u003c/ul\u003e\n    \u003c/li\u003e\n  \u003c/ul\u003e\n\u003c/nav\u003e</div>',allowHTML:!0,placement:'bottom-start',interactive:!0,arrow:!1,maxWidth:"none",onHide:function(){tocToggleButton.classList.remove("hover")},onShow:function(){tocToggleButton.classList.add("hover")},onShown:function(){if(selectTableOfContentsOption(),window.hasSetupTableOfContentsListeners)return;const a=document.getElementById("table-of-contents");a.addEventListener('click',function(){tippyInstance[0].hide()}),window.hasSetupTableOfContentsListeners=!0}});function selectTableOfContentsOption(){const a='table-of-contents-option-selected',b=document.querySelectorAll("#table-of-contents > nav > ul li");for(const d of b){const[c]=d.children;if(c.tagName.toLowerCase()!=='a')continue;window.location.href===c.href?c.classList.add(a):c.classList.remove(a)}}window.onhashchange=selectTableOfContentsOption</script>
+<div class="footer container-xl width-full p-responsive">
+<div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light">
+<a aria-label=Homepage title=GitHub class="footer-octicon d-none d-lg-block mr-lg-4" href=www.luvsia.com><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58.0.0 3.58.0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38.0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95.0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12.0.0.67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15.0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48.0 1.07-.01 1.93-.01 2.2.0.21.15.46.55.38A8.013 8.013.0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+<ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+<li class="mr-3 mr-lg-0">Theme by <a href=https://github.com/MeiK2333/github-style>github-style</a></li>
+</ul>
+</div>
+<div class="d-flex flex-justify-center pb-6">
+<span class="f6 text-gray-light"></span>
+</div>
+</div>
+</body>
+<script type=application/javascript src=www.luvsia.com/js/github-style.js></script>
+</html>

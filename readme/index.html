@@ -172,9 +172,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sat, 22 Jan 2022 20:20:40 &#43;0000"
+                  Modified <relative-time datetime="Sat, 22 Jan 2022 20:52:13 &#43;0000"
                     class="no-wrap">
-                    Sat, 22 Jan 2022 20:20:40 &#43;0000</relative-time>
+                    Sat, 22 Jan 2022 20:52:13 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -319,25 +319,7 @@ if (!doNotTrack) {
 <div id="gitalk-container"></div>
 <link rel="stylesheet" href='https://luvsia.com/gitalk/gitalk.css'>
 <script src='https://luvsia.com/gitalk/gitalk.min.js'></script>
-<script>
-  const gitalk = new Gitalk({
-    clientID: '84d6a9f5c7a8475f9e7b',
-    clientSecret: 'e45ce5415105ad06c1fe461af71a61d0d46761f3',
-    repo: 'LuvSia',
-    owner: 'ventusoon',
-    admin: ['ventusoon'],
-    proxy: 'https:\/\/cors-anywhere.azm.workers.dev\/https:\/\/github.com\/login\/oauth\/access_token',
-    id: location.pathname, 
-    distractionFreeMode: false 
-  });
-  (function() {
-    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-      document.getElementById('gitalk-container').innerHTML = 'Gitalk comments not available by default when the website is previewed locally.';
-      return;
-    }
-    gitalk.render('gitalk-container');
-  })();
-</script>
+<script src='https://luvsia.com/gitalk/gitalk.js'></script>
 
 
   <div class="footer container-xl width-full p-responsive">

@@ -841,7 +841,7 @@
   height: 3.125em;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-avatar {
     width: 2em;
     height: 2em;
@@ -860,7 +860,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-avatar-github {
     width: 1.875em;
     height: 1.875em;
@@ -1059,7 +1059,7 @@
   margin-left: 1.25em;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-header-comment {
     margin-left: 0.875em;
   }
@@ -1110,7 +1110,7 @@
   clear: both;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-header-controls {
     margin: 0;
   }
@@ -1123,7 +1123,7 @@
   vertical-align: sub;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-header-controls-tip {
     display: none;
   }
@@ -1134,7 +1134,7 @@
   margin-left: 1.25em;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-header-controls .gt-btn {
     float: none;
     width: 100%;
@@ -1212,7 +1212,7 @@
   box-shadow: 0 0.625em 3.75em 0 #f4f4f4;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 479px) {
   .gt-container .gt-comment-content {
     margin-left: 0.875em;
     padding: 0.625em 0.75em;

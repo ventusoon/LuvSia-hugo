@@ -178,9 +178,9 @@ Server Building
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sun, 23 Jan 2022 19:41:03 &#43;0000"
+                  Modified <relative-time datetime="Sun, 23 Jan 2022 21:03:25 &#43;0000"
                     class="no-wrap">
-                    Sun, 23 Jan 2022 19:41:03 &#43;0000</relative-time>
+                    Sun, 23 Jan 2022 21:03:25 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -204,7 +204,7 @@ Server Building
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          1906 Words
+                          1902 Words
                     
 
                   </div>
@@ -282,8 +282,8 @@ Server Building
 </tbody>
 </table>
 <p><em>更新软件源</em></p>
-<pre tabindex="0"><code>apt update
-</code></pre><h2 id="搭建思路">搭建思路</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt update
+</code></pre></div><h2 id="搭建思路">搭建思路</h2>
 <p><strong>预留一级域名搭建网站</strong>，<strong><del>给各个应用添加前端网页根路径。</del></strong></p>
 <p><strong>后因部分应用无法添加<code>二级目录</code>（网页根路径），所以这里只能使用添加<code>二级域名</code>的思路，区别各个应用。</strong></p>
 <p><strong>再通过添加<code>反向代理</code>，实现分域名访问不同前端应用。</strong></p>
@@ -307,8 +307,8 @@ Server Building
 一键脚本集成工具</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget --no-check-certificate https://raw.githubusercontent.com/jinwyp/one_click_script/master/trojan_v2ray_install.sh <span class="o">&amp;&amp;</span> chmod +x ./trojan_v2ray_install.sh <span class="o">&amp;&amp;</span> ./trojan_v2ray_install.sh
 </code></pre></div><p>或</p>
-<pre tabindex="0"><code>wget -O install.sh http://download.yu.al/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh
-</code></pre><p><strong>2.安装<code>nginx-1.21</code>、<code>mysql-5.5</code>、<code>php-7.4</code>、<code>phpmyadmin-5.0</code>四件套</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -O install.sh http://download.yu.al/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh
+</code></pre></div><p><strong>2.安装<code>nginx-1.21</code>、<code>mysql-5.5</code>、<code>php-7.4</code>、<code>phpmyadmin-5.0</code>四件套</strong></p>
 <p><strong>3.添加站点。</strong></p>
 <table>
 <thead>
@@ -349,9 +349,9 @@ Server Building
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">panel</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">admin_path</span><span class="p">.</span><span class="n">pl</span>
 </code></pre></div><p><strong>6.在<code>Cloudflare</code>中解析二级域名<code>b.example.com</code></strong></p>
 <p><strong>7.添加反向代理到<code>b.example.com</code></strong></p>
-<pre tabindex="0"><code>代理名称 宝塔面板
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">代理名称 宝塔面板
 目标URL  http://127.0.0.1:8888  发送域名 $host
-</code></pre><p><strong>8.安装<code>docker</code>安装器。</strong></p>
+</code></pre></div><p><strong>8.安装<code>docker</code>安装器。</strong></p>
 <h3 id="x-ui">X-UI</h3>
 <table>
 <thead>
@@ -370,8 +370,8 @@ Server Building
 </tbody>
 </table>
 <p><strong>1.镜像源</strong></p>
-<pre tabindex="0"><code>enwaiax/x-ui:latest
-</code></pre><p><strong>2.安装运行</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">enwaiax/x-ui:latest
+</code></pre></div><p><strong>2.安装运行</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir x-ui <span class="o">&amp;&amp;</span> <span class="nb">cd</span> x-ui
 docker run -itd --network<span class="o">=</span>host <span class="se">\
 </span><span class="se"></span>    -v <span class="nv">$PWD</span>/db/:/etc/x-ui/ <span class="se">\
@@ -380,9 +380,9 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </span><span class="se"></span>    enwaiax/x-ui:latest
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>x.example.com</code></strong></p>
 <p><strong>4.添加反向代理到<code>x.example.com</code></strong></p>
-<pre tabindex="0"><code>代理名称 x-ui
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">代理名称 x-ui
 目标URL  http://127.0.0.1:54321  发送域名 $host
-</code></pre><p><strong>5.配置<code>VMess</code>协议，开启<code>ws</code>，路径<code>/xiya</code>。</strong></p>
+</code></pre></div><p><strong>5.配置<code>VMess</code>协议，开启<code>ws</code>，路径<code>/xiya</code>。</strong></p>
 <p><strong>6.开启CDN加速，在<code>nginx</code>配置文件中添加如下。</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">location</span> <span class="o">/</span><span class="nx">xiya</span> <span class="p">{</span>
         <span class="nx">proxy_redirect</span> <span class="nx">off</span><span class="p">;</span>
@@ -422,14 +422,14 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </tbody>
 </table>
 <p><strong>1.添加镜像源</strong></p>
-<pre tabindex="0"><code>xhofe/alist:latest
-</code></pre><p><strong>2.不配置容器，使用代码</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">xhofe/alist:latest
+</code></pre></div><p><strong>2.不配置容器，使用代码</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">docker</span> <span class="nx">run</span> <span class="o">-</span><span class="nx">d</span> <span class="o">--</span><span class="nx">restart</span><span class="o">=</span><span class="nx">always</span> <span class="o">-</span><span class="nx">v</span> <span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">alist</span><span class="o">:</span><span class="err">/opt/alist/data -p 5244:5244 --name=&#34;alist&#34; xhofe/alist:latest</span>
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>a.example.com</code></strong></p>
 <p><strong>4.添加反向代理到a.example.com</strong></p>
-<pre tabindex="0"><code>代理名称 alist
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">代理名称 alist
 目标URL  http://127.0.0.1:5244  发送域名 $host
-</code></pre><h3 id="transmission">Transmission</h3>
+</code></pre></div><h3 id="transmission">Transmission</h3>
 <table>
 <thead>
 <tr>
@@ -448,13 +448,13 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </table>
 <h4 id="1docker安装">1.Docker安装</h4>
 <p><strong>构建镜像</strong></p>
-<pre tabindex="0"><code># 克隆仓库
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># 克隆仓库
 git clone https://github.com/helloxz/docker-transmission.git
 # 进入仓库目录
 cd docker-transmission
 # 构建Docker镜像
 docker build -t luvsia:transmission
-</code></pre><p><strong>运行镜像</strong></p>
+</code></pre></div><p><strong>运行镜像</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">docker</span> <span class="nx">run</span> <span class="o">-</span><span class="nx">d</span> <span class="o">--</span><span class="nx">name</span><span class="o">=</span><span class="s2">&#34;transmission&#34;</span> <span class="o">\</span>
   <span class="o">-</span><span class="nx">e</span> <span class="nx">USERNAME</span><span class="o">=</span><span class="nx">ventus</span> <span class="o">\</span>
   <span class="o">-</span><span class="nx">e</span> <span class="nx">PASSWORD</span><span class="o">=</span><span class="nx">ysw554247430</span> <span class="o">\</span>
@@ -470,32 +470,32 @@ docker build -t luvsia:transmission
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">transmission</span><span class="o">-</span><span class="n">daemon</span>
 </code></pre></div><p><strong>首先执行一次启动和停止命令，防止配置文件被覆盖</strong></p>
 <p>启动</p>
-<pre tabindex="0"><code>service transmission-daemon start
-</code></pre><p>停止</p>
-<pre tabindex="0"><code>service transmission-daemon stop
-</code></pre><p>重启</p>
-<pre tabindex="0"><code>service transmission-daemon restart
-</code></pre><p><strong>修改transmission-daemon配置文件</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">service transmission-daemon start
+</code></pre></div><p>停止</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">service transmission-daemon stop
+</code></pre></div><p>重启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">service transmission-daemon restart
+</code></pre></div><p><strong>修改transmission-daemon配置文件</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">nano</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">transmission</span><span class="o">-</span><span class="n">daemon</span><span class="o">/</span><span class="n">info</span><span class="o">/</span><span class="n">settings</span><span class="p">.</span><span class="n">json</span>
-</code></pre></div><pre tabindex="0"><code>&quot;rpc-host-whitelist&quot;: &quot;*&quot;,  //域名白名单，*为允许所有
-&quot;rpc-host-whitelist-enabled&quot;: false, //是否开启白名单，false为否
-&quot;rpc-password&quot;: &quot;远程登录密码&quot;,
-&quot;rpc-port&quot;: 9091, //远程登录端口
-&quot;rpc-username&quot;: &quot;远程帐号&quot;,
-&quot;rpc-whitelist&quot;: &quot;*&quot;, //ip白名单
-&quot;rpc-whitelist-enabled&quot;: false,  //是否开启ip白名单，false为否
-</code></pre><p><strong>执行启动命令</strong></p>
-<pre tabindex="0"><code>service transmission-daemon start
-</code></pre><h4 id="2-2transmission-web-controlhttpsgithubcomronggangtransmission-web-controlwikilinux-installation-cn美化">2-2.<a href="https://github.com/ronggang/transmission-web-control/wiki/Linux-Installation-CN">transmission-web-control</a>美化</h4>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&#34;rpc-host-whitelist&#34;: &#34;*&#34;,  //域名白名单，*为允许所有
+&#34;rpc-host-whitelist-enabled&#34;: false, //是否开启白名单，false为否
+&#34;rpc-password&#34;: &#34;远程登录密码&#34;,
+&#34;rpc-port&#34;: 9091, //远程登录端口
+&#34;rpc-username&#34;: &#34;远程帐号&#34;,
+&#34;rpc-whitelist&#34;: &#34;*&#34;, //ip白名单
+&#34;rpc-whitelist-enabled&#34;: false,  //是否开启ip白名单，false为否
+</code></pre></div><p><strong>执行启动命令</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">service transmission-daemon start
+</code></pre></div><h4 id="2-2transmission-web-controlhttpsgithubcomronggangtransmission-web-controlwikilinux-installation-cn美化">2-2.<a href="https://github.com/ronggang/transmission-web-control/wiki/Linux-Installation-CN">transmission-web-control</a>美化</h4>
 <p><strong>获取安装脚本</strong></p>
-<pre tabindex="0"><code>wget https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
-</code></pre><p><strong>执行安装脚本</strong></p>
-<pre tabindex="0"><code>bash install-tr-control-cn.sh
-</code></pre><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>t.example.com</code></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget https://github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
+</code></pre></div><p><strong>执行安装脚本</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bash install-tr-control-cn.sh
+</code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>t.example.com</code></strong></p>
 <p><strong>4.添加反向代理到t.example.com</strong></p>
-<pre tabindex="0"><code>代理名称 transmission
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">代理名称 transmission
 目标URL  http://127.0.0.1:9091  发送域名 $host
-</code></pre><p><strong>5.修改默认保存目录<code>/GoogleDrive</code>，启用临时目录<code>/Downloads</code>，记得给<code>!权限!</code></strong></p>
+</code></pre></div><p><strong>5.修改默认保存目录<code>/GoogleDrive</code>，启用临时目录<code>/Downloads</code>，记得给<code>!权限!</code></strong></p>
 <h3 id="rclone">Rclone</h3>
 <table>
 <thead>
@@ -516,12 +516,12 @@ docker build -t luvsia:transmission
 <p><strong>1.安装<code>Rclone</code></strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://www.moerats.com/usr/shell/rclone_debian.sh <span class="o">&amp;&amp;</span> bash rclone_debian.sh
 </code></pre></div><p><strong>2.初始化配置</strong></p>
-<pre tabindex="0"><code>rclone config
-</code></pre><p><strong>3.选择<code>GoogleDrive</code>，剩余操作参考<a href="https://www.moerats.com/archives/491/">这里</a></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">rclone config
+</code></pre></div><p><strong>3.选择<code>GoogleDrive</code>，剩余操作参考<a href="https://www.moerats.com/archives/491/">这里</a></strong></p>
 <p><strong>4.挂载磁盘</strong></p>
-<pre tabindex="0"><code>mkdir -p /GoogleDrive
-</code></pre><pre tabindex="0"><code>mkdir -p /Downloads
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="err">/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p /GoogleDrive
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p /Downloads
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="err">/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
  <span class="o">--</span><span class="nx">umask</span> <span class="mi">0000</span> <span class="o">\</span>
  <span class="o">--</span><span class="k">default</span><span class="o">-</span><span class="nx">permissions</span> <span class="o">\</span>
  <span class="o">--</span><span class="nx">allow</span><span class="o">-</span><span class="nx">non</span><span class="o">-</span><span class="nx">empty</span> <span class="o">\</span>
@@ -557,13 +557,13 @@ docker build -t luvsia:transmission
 <span class="nx">EOF</span>
 </code></pre></div><p><strong>挂载成功后，输入<code>df -h</code>命令即可看到挂载的磁盘</strong></p>
 <p><strong>6.常用命令</strong></p>
-<pre tabindex="0"><code>systemctl start rclone
-</code></pre><pre tabindex="0"><code>systemctl enable rclone
-</code></pre><pre tabindex="0"><code>systemctl stop rclone
-</code></pre><pre tabindex="0"><code>systemctl status rclone
-</code></pre><p><strong>7.<code>Transmission</code>添加<code>rlone</code>挂载在<code>GoogleDrive</code>上的路径</strong></p>
-<pre tabindex="0"><code>/GoogleDrive
-</code></pre><h3 id="live-torrent">Live-torrent</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl start rclone
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable rclone
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl stop rclone
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl status rclone
+</code></pre></div><p><strong>7.<code>Transmission</code>添加<code>rlone</code>挂载在<code>GoogleDrive</code>上的路径</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/GoogleDrive
+</code></pre></div><h3 id="live-torrent">Live-torrent</h3>
 <table>
 <thead>
 <tr>
@@ -581,14 +581,14 @@ docker build -t luvsia:transmission
 </tbody>
 </table>
 <p><strong>1.镜像源</strong></p>
-<pre tabindex="0"><code>davenchy/live-torrent
-</code></pre><p><strong>2.安装运行</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">davenchy/live-torrent
+</code></pre></div><p><strong>2.安装运行</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">docker run --restart<span class="o">=</span>always --name live-torrent -d -p 8080:8080 davenchy/live-torrent
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>live.example.com</code></strong></p>
 <p><strong>4.添加反向代理到<code>live.example.com</code></strong></p>
-<pre tabindex="0"><code>代理名称 Live-torrent
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">代理名称 Live-torrent
 目标URL  http://127.0.0.1:8080  发送域名 $host
-</code></pre><h3 id="cloudflare-warp">Cloudflare WARP</h3>
+</code></pre></div><h3 id="cloudflare-warp">Cloudflare WARP</h3>
 <table>
 <thead>
 <tr>

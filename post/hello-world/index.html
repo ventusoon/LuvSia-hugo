@@ -175,9 +175,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sun, 23 Jan 2022 13:52:06 &#43;0000"
+                  Modified <relative-time datetime="Sun, 23 Jan 2022 15:33:16 &#43;0000"
                     class="no-wrap">
-                    Sun, 23 Jan 2022 13:52:06 &#43;0000</relative-time>
+                    Sun, 23 Jan 2022 15:33:16 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -201,7 +201,7 @@ if (!doNotTrack) {
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          525 Words
+                          1617 Words
                     
 
                   </div>
@@ -246,10 +246,23 @@ if (!doNotTrack) {
 </li>
 <li><a href="#%E5%A1%AB%E5%9D%91%E5%90%8E%E8%AE%B0">After all</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">--- 2020.01.20  萌生写下这篇文章的想法，并把大纲po在这里。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">--- 2022.01.23.22:00  前言，写了一些废话。
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">--- 2022.01.20.09:56  萌生写下这篇文章的想法，并把大纲po在这里。
 </span></code></pre></div><h2 id="闲言碎语">闲言碎语</h2>
-<p><strong>前段时间，在老婆的支持下(“盗”刷老婆信用卡，orz)，买了一个十年的域名，起初拿来也就无非是给服务器套个域名，加个SSL，反代一些需要用到的web工具。后来因为这个域名是“<code>千挑万选</code>”出来的（<code>Sia刚好与老婆名字谐音，所以自然而然地在前面加个Luv不过分吧，2333</code>），又想着现在的朋友圈基本上也没咋发过东西，全都是一些工作上的琐事。不如开个博客，记录一下生活（主要是想着，用着这么有“<code>内涵</code>”的域名，让老婆感受一下应有的尊重，还能升华彼此的感情，哈哈哈，扯远了），还可以把自己“搞机爱好”（<code>折腾癖好</code>）的过程记录下，把<a href="https://luvsia.com/">README</a>中所说的<code>Ctrl+C</code>，<code>Ctrl+V</code>变为自己的知识，而不是只会复制粘贴，成了一个<code>工具</code>人。让这项爱好不至于太肤浅，还能真正掌握一下基础的编程知识。</strong></p>
+<h3 id="从信用卡聊到陈年往事">从“信用卡”聊到陈年往事。</h3>
+<p><strong>前段时间，在老婆的支持下(“盗”刷老婆信用卡，orz)，买了一个十年的域名，起初拿来也就无非是给服务器套个域名，加个SSL，反代一些需要用到的web工具。想着这个域名好歹也是“<code>千挑万选</code>”出来的（<code>Sia刚好与老婆名字谐音，所以自然而然地在前面加个Luv不过分吧，2333</code>），现在的朋友圈基本上也没咋发过东西，全都是一些工作上的琐事。不如开个博客，记录一下生活（主要是用着这么有“<code>内涵</code>”的域名，让老婆感受一下应有的尊重，还能升华彼此的感情，哈哈哈，扯远了），还可以把自己“搞机爱好”（<code>折腾癖好</code>）的过程记录下，把<a href="https://luvsia.com/">README</a>中所说的<code>Ctrl+C</code>，<code>Ctrl+V</code>变为自己的知识，而不是只会复制粘贴，成了一个<code>工具</code>人。让这项爱好不至于太肤浅，还能真正掌握一下基础的编程知识。</strong></p>
 <p><strong>这篇博客，主要是记录下整个Blog的搭建基本思路与部署过程，Blog完成<code>Hello World</code>之后，后续一直在跟进基础美化、插件适配的工作，所以这篇文章也就搁置如今。“简简单单”的两个美化项目，碍于能力有限，三天时间才完成80%，真<code>tm</code>惨&hellip;</strong></p>
+<p><strong>在刚接触到Blog搭建还是在近6年以前，也是搞了个域名，搭了服务器，并把博客部署在服务器上，用的是<code>WordPress</code>。在当时，<code>WordPress</code>就已经是一个成熟的网站建设工具。<code>WordPress</code>功能是挺强大，主题、插件多，用户量基数也大，很容易就可以找到一些自己喜欢的“小物件”放到自己的博客上。奈何当时对代码之类的东西一窍不通，完全是通过可视化操作去完成的，也就不知道Go语言与PHP语言的区别，当然PHP语言在当时依然是主流。那会儿不仅要把精力放在服务器的维护上，还要把网站的Blog给弄好，还要用到Nginx、Mysql、phpmyadmin一大堆工具，还要在数据库中修改才能满足一些自己的需求，可以说是十分的繁琐。后来因为原服务器废弃，数据也没有转移，也没有本地保存，折腾的东西也就随之而去了&hellip;</strong></p>
+<p><strong>很久没有接触这方面的知识，现在就相当于回炉重造。了解了一下目前主流的Blog建站工具之后，Hexo和Hugo进入我的眼帘。从搜索引擎的数据上来看，Hexo的内容量与Hugo完全不在一个数量级&hellip;</strong>
+<img src="/images/hello-world/Hexo.png" alt="">
+<img src="/images/hello-world/Hugo.png" alt="">
+<strong>与传统在服务器部署相比，虽然本地也可以操作，修改内容，但大部分人都是仅仅只在服务器上完成，省去了本地修改、远程部署的步骤。导致服务器一崩，所有数据都随风而去&hellip;比如我自己在几年前也是如此。现如今，静态网站成为主流，Go语言也让国际大厂争先使用，像Google，Dropbox，SoundCloud，Twitter，PayPal等公司都用 Go 语言构建了他们的后端系统。</strong></p>
+<h3 id="如何选择hexo与hugo">如何选择Hexo与Hugo？</h3>
+<p><strong>下来看看Hugo中文文档：</strong></p>
+<p><strong>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。当前的静态网站生成工具对环境依赖过多，性能较差，于是使用 Go 语言写了一个静态网站生成器 Hugo。不仅解决了环境依赖、性能较差的问题，还有使用简单、部署方便等诸多优点，通过 LiveReload 实时刷新，极大的优化文章的写作体验。Hugo 能做什么？通过 Hugo 你可以快速搭建你的静态网站，比如博客系统、文档介绍、公司主页、产品介绍等等。</strong></p>
+<p><strong>下来看看Hexo中文文档：</strong></p>
+<p><strong>什么是Hexo ? Hexo是一款基于Node.js的静态博客框架,依赖少易于安装使用,可以方便的生成静态网页托管在GitHub和Heroku上,是搭建博客的首选框架。</strong></p>
+<p><strong>可以看出，Hexo与Hugo都是静态网站生成器的首选，而且都可以用上<a href="https://pages.github.com/"><code>Github-Pages</code></a>。在网上筛选了使用者反馈信息之后，最终我还是选择了用Go语言编写的<code>Hugo</code>+<code>Github-Pages</code>+<code>CDN</code>来搭建此Blog。</strong></p>
 <h2 id="准备工作">准备工作</h2>
 <table>
 <thead>
@@ -290,7 +303,7 @@ if (!doNotTrack) {
 
  const tippyInstance = tippy('#toc-toggle', {
   trigger: 'click',
-  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\u0022#闲言碎语\u0022\u003e闲言碎语\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#准备工作\u0022\u003e准备工作\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#开始实战\u0022\u003e开始实战\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#填坑后记\u0022\u003e填坑后记\u003c\/a\u003e\u003c\/li\u003e\n  \u003c\/ul\u003e\n\u003c\/nav\u003e</div>',
+  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\u0022#闲言碎语\u0022\u003e闲言碎语\u003c\/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\u0022#从信用卡聊到陈年往事\u0022\u003e从“信用卡”聊到陈年往事。\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#如何选择hexo与hugo\u0022\u003e如何选择Hexo与Hugo？\u003c\/a\u003e\u003c\/li\u003e\n      \u003c\/ul\u003e\n    \u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#准备工作\u0022\u003e准备工作\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#开始实战\u0022\u003e开始实战\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#填坑后记\u0022\u003e填坑后记\u003c\/a\u003e\u003c\/li\u003e\n  \u003c\/ul\u003e\n\u003c\/nav\u003e</div>',
   allowHTML: true,
   placement: 'bottom-start',
   interactive: true,

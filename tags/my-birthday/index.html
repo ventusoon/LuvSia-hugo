@@ -29,13 +29,13 @@ if (!doNotTrack) {
     <script>var ap = new APlayer({
           element: document.getElementById('aplayer'),
           narrow: false,
-        fixed: true,
+          fixed: true,
           autoplay: false,
           mutex: true,
         lrcType: 3,
       });
         $.ajax({
-        url: 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=7197938544',
+        url: 'https://music.163.com/api/playlist/detail?id=2557908184',
         success: function (list) {
         ap.list.add(list);
         }

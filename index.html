@@ -77,42 +77,24 @@ if (!doNotTrack) {
 
 <link rel="stylesheet" href="/aplayer/APlayer.min.css">
 <script src="/aplayer/APlayer.min.js"></script>
-<script src="/aplayer/color-thief.js"></script>
 <div id="aplayer"></div>
 <script>const ap = new APlayer({
       container: document.getElementById('aplayer'),
       fixed: true,
       autoplay: true,
       audio: [{
-          name: 'Van Gogh',
-          artist: 'Aminé',
-          url: 'http://music.163.com/song/media/outer/url?id=1890421171.mp3',
-          cover: 'https://p1.music.126.net/Tr15UWL9rq9zsDVHA_rMfQ==/109951166563528361.jpg'
-      }]
-  });
-</script>
-<script>const colorThief = new ColorThief();
-  const image = new Image();
-  const xhr = new XMLHttpRequest();
-  const setTheme = (index) => {
-     if (!ap.list.audios[index].theme) {
-        xhr.onload = function(){
-           let coverUrl = URL.createObjectURL(this.response);
-           image.onload = function(){
-           let color = colorThief.getColor(image);
-           ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-           URL.revokeObjectURL(coverUrl)
-            };
-           image.src = coverUrl;
-           }
-        xhr.open('GET', ap.list.audios[index].cover, true);
-        xhr.responseType = 'blob';
-        xhr.send();
-        }
-        };
- setTheme(ap.list.index);
-  ap.on('listswitch', (index) => {
-  setTheme(index);
+        name: '落日飞行',
+        artist: '火晚晴,XMASwu',
+        url: 'http://music.163.com/song/media/outer/url?id=1441353003.mp3',
+        cover: 'https://p1.music.126.net/4YoSuPzj8S59W5tbxxLipQ==/109951164914692140.jpg',
+      },
+      {
+        name: 'Van Gogh',
+        artist: 'Aminé',
+        url: 'http://music.163.com/song/media/outer/url?id=1890421171.mp3',
+        cover: 'https://p1.music.126.net/Tr15UWL9rq9zsDVHA_rMfQ==/109951166563528361.jpg'
+      }
+    ] 
   });
 </script>
 
@@ -129,6 +111,15 @@ if (!doNotTrack) {
 <script type="text/javascript" src="/js/love.js"></script>
 
 
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script>
+
+ $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
+
+</script>
 </head>
 
 <body>

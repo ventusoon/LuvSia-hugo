@@ -26,6 +26,14 @@
 <link rel="canonical" href="https://luvsia.com/post/hello-world/" />
 
 
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script>
+  $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
+</script>
+
+
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Hello World - Ventus&#39; blog" />
 <meta name="twitter:description"
@@ -77,26 +85,22 @@ if (!doNotTrack) {
 
 
 
-<link rel="stylesheet" href="/aplayer/APlayer.min.css">
-<script src="/aplayer/APlayer.min.js"></script>
+<link rel="stylesheet" href="/css/APlayer.min.css">
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <div id="aplayer"></div>
-<script>const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      autoplay: true,
-      audio: [{
-        name: '落日飞行',
-        artist: '火晚晴,XMASwu',
-        url: 'http://music.163.com/song/media/outer/url?id=1441353003.mp3',
-        cover: 'https://p1.music.126.net/4YoSuPzj8S59W5tbxxLipQ==/109951164914692140.jpg',
-      },
-      {
-        name: 'Van Gogh',
-        artist: 'Aminé',
-        url: 'http://music.163.com/song/media/outer/url?id=1890421171.mp3',
-        cover: 'https://p1.music.126.net/Tr15UWL9rq9zsDVHA_rMfQ==/109951166563528361.jpg'
-      }
-    ] 
+<script>var ap = new APlayer({
+      element: document.getElementById('aplayer'),
+      narrow: false,
+    fixed: true,
+      autoplay: false,
+      mutex: true,
+    lrcType: 3,
+  });
+    $.ajax({
+    url: 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=6690262418',
+    success: function (list) {
+    ap.list.add(list);
+    }
   });
 </script>
 
@@ -112,16 +116,6 @@ if (!doNotTrack) {
 
 <script type="text/javascript" src="/js/love.js"></script>
 
-
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-
-<script>
-
- $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
-
-</script>
 </head>
 
 <body>
@@ -217,9 +211,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Mon, 24 Jan 2022 12:37:51 &#43;0000"
+                  Modified <relative-time datetime="Mon, 24 Jan 2022 14:20:54 &#43;0000"
                     class="no-wrap">
-                    Mon, 24 Jan 2022 12:37:51 &#43;0000</relative-time>
+                    Mon, 24 Jan 2022 14:20:54 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -243,7 +237,7 @@ if (!doNotTrack) {
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          1609 Words
+                          1635 Words
                     
 
                   </div>
@@ -288,12 +282,13 @@ if (!doNotTrack) {
 </li>
 <li><a href="#%E5%A1%AB%E5%9D%91%E5%90%8E%E8%AE%B0">After all</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">-- 2022.01.23 前言，写了一些废话。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">-- 2022.01.24 简简单单的两个美化项目又变成了好几个。。。😥😥😥
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">-- 2022.01.23 前言，写了一些废话。
 </span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">-- 2022.01.20 萌生写下这篇文章的想法，并把大纲po在这里。
 </span></code></pre></div><h2 id="闲言碎语">闲言碎语</h2>
 <h3 id="从信用卡聊到陈年往事">从“信用卡”聊到陈年往事</h3>
 <p>前段时间，在老婆的支持下(“盗”刷老婆信用卡，orz)，买了一个十年的域名，起初拿来也就无非是给服务器套个域名，加个SSL，反代一些需要用到的web工具。想着这个域名好歹也是“<code>千挑万选</code>”出来的（<code>Sia刚好与老婆名字谐音，所以自然而然地在前面加个Luv不过分吧，2333</code>），现在的朋友圈基本上也没咋发过东西，全都是一些工作上的琐事。不如开个博客，记录一下生活（主要是用着这么有“<code>内涵</code>”的域名，让老婆感受一下应有的尊重，还能升华彼此的感情，哈哈哈，扯远了），还可以把自己“搞机爱好”（<code>折腾癖好</code>）的过程记录下，把<a href="https://luvsia.com/">README</a>中所说的<code>Ctrl+C</code>，<code>Ctrl+V</code>变为自己的知识，而不是只会复制粘贴，成了一个<code>工具</code>人。让这项爱好不至于太肤浅，还能真正掌握一下基础的编程知识。</p>
-<p>这篇博客，主要是记录下整个Blog的搭建基本思路与部署过程，Blog完成<code>Hello World</code>之后，后续一直在跟进基础美化、插件适配的工作，所以这篇文章也就搁置如今。“简简单单”的两个美化项目，碍于能力有限，三天时间才完成80%，真<code>tm</code>惨&hellip;</p>
+<p>这篇博客，主要是记录下整个Blog的搭建基本思路与部署过程，Blog完成<code>Hello World</code>之后，后续一直在跟进基础美化、插件适配的工作，所以这篇文章也就搁置如今。“简简单单”的<del><del>两个美化项目</del></del>，碍于能力有限，三天时间才完成80%，真<code>tm</code>惨&hellip;</p>
 <p>在刚接触到Blog搭建还是在近6年以前，也是搞了个域名，搭了服务器，并把博客部署在服务器上，用的是<code>WordPress</code>。在当时，<code>WordPress</code>就已经是一个成熟的网站建设工具。<code>WordPress</code>功能是挺强大，主题、插件多，用户量基数也大，很容易就可以找到一些自己喜欢的“小物件”放到自己的博客上。奈何当时对代码之类的东西一窍不通，完全是通过可视化操作去完成的，也就不知道Go语言与PHP语言的区别，当然PHP语言在当时依然是主流。那会儿不仅要把精力放在服务器的维护上，还要把网站的Blog给弄好，还要用到Nginx、Mysql、phpmyadmin一大堆工具，还要在数据库中修改才能满足一些自己的需求，可以说是十分的繁琐。后来因为原服务器废弃，数据也没有转移，也没有本地保存，折腾的东西也就随之而去了&hellip;</p>
 <p>很久没有接触这方面的知识，现在就相当于回炉重造。了解了一下目前主流的Blog建站工具之后，Hexo和Hugo进入我的眼帘。从搜索引擎的数据上来看，Hexo的内容量与Hugo完全不在一个数量级&hellip;
 <img src="/images/hello-world/Hexo.png" alt="Hexo">
@@ -398,8 +393,8 @@ if (!doNotTrack) {
 
 
 <div id="gitalk-container" style="margin:0 auto;width: 600px;height: auto"></div>
-<link rel="stylesheet" href="/gitalk/gitalk.css">
-<script src="/gitalk/gitalk.min.js"></script>
+<link rel="stylesheet" href="/css/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
   const gitalk = new Gitalk({
     clientID: '84d6a9f5c7a8475f9e7b',

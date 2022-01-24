@@ -27,6 +27,14 @@ Server Building
 <link rel="canonical" href="https://luvsia.com/post/server-building/" />
 
 
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script>
+  $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
+</script>
+
+
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="从零开始的服务器搭建纪实 - Ventus&#39; blog" />
 <meta name="twitter:description"
@@ -80,26 +88,22 @@ if (!doNotTrack) {
 
 
 
-<link rel="stylesheet" href="/aplayer/APlayer.min.css">
-<script src="/aplayer/APlayer.min.js"></script>
+<link rel="stylesheet" href="/css/APlayer.min.css">
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <div id="aplayer"></div>
-<script>const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      autoplay: true,
-      audio: [{
-        name: '落日飞行',
-        artist: '火晚晴,XMASwu',
-        url: 'http://music.163.com/song/media/outer/url?id=1441353003.mp3',
-        cover: 'https://p1.music.126.net/4YoSuPzj8S59W5tbxxLipQ==/109951164914692140.jpg',
-      },
-      {
-        name: 'Van Gogh',
-        artist: 'Aminé',
-        url: 'http://music.163.com/song/media/outer/url?id=1890421171.mp3',
-        cover: 'https://p1.music.126.net/Tr15UWL9rq9zsDVHA_rMfQ==/109951166563528361.jpg'
-      }
-    ] 
+<script>var ap = new APlayer({
+      element: document.getElementById('aplayer'),
+      narrow: false,
+    fixed: true,
+      autoplay: false,
+      mutex: true,
+    lrcType: 3,
+  });
+    $.ajax({
+    url: 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=6690262418',
+    success: function (list) {
+    ap.list.add(list);
+    }
   });
 </script>
 
@@ -115,16 +119,6 @@ if (!doNotTrack) {
 
 <script type="text/javascript" src="/js/love.js"></script>
 
-
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-
-<script>
-
- $(document).pjax('a[target!=_blank]', '#container', {fragment:'#container', timeout:8000})
-
-</script>
 </head>
 
 <body>
@@ -220,9 +214,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Mon, 24 Jan 2022 12:37:51 &#43;0000"
+                  Modified <relative-time datetime="Mon, 24 Jan 2022 14:20:54 &#43;0000"
                     class="no-wrap">
-                    Mon, 24 Jan 2022 12:37:51 &#43;0000</relative-time>
+                    Mon, 24 Jan 2022 14:20:54 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -745,8 +739,8 @@ docker build -t luvsia:transmission
 
 
 <div id="gitalk-container" style="margin:0 auto;width: 600px;height: auto"></div>
-<link rel="stylesheet" href="/gitalk/gitalk.css">
-<script src="/gitalk/gitalk.min.js"></script>
+<link rel="stylesheet" href="/css/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
   const gitalk = new Gitalk({
     clientID: '84d6a9f5c7a8475f9e7b',

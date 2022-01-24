@@ -2,47 +2,6 @@
 <html lang="zh-cn">
 <head>
 	<meta name="generator" content="Hugo 0.92.0" />
-    
-    <script src='https://luvsia.com/live2d/autoload.js'></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    
-    
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-217833977-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    
-    
-    <script type="text/javascript" src="/js/love.js"></script>
-    
-    <link rel="stylesheet" href="/aplayer/APlayer.min.css">
-    <script src="/aplayer/APlayer.min.js"></script>
-    <script src="/aplayer/Meting.min.js"></script>
-    <div id="aplayer"></div>
-    <script>var ap = new APlayer({
-          element: document.getElementById('aplayer'),
-          narrow: false,
-          fixed: true,
-          autoplay: false,
-          mutex: true,
-        lrcType: 3,
-      });
-        $.ajax({
-        url: 'https://music.163.com/api/playlist/detail?id=2557908184',
-        success: function (list) {
-        ap.list.add(list);
-        }
-      });
-    </script>
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <script type="application/javascript" src='https://luvsia.com/js/theme-mode.js'></script>
@@ -99,9 +58,77 @@ if (!doNotTrack) {
 
 
 
-    <link rel="stylesheet" href="/highlight/agate.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-217833977-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+<link rel="stylesheet" href="/aplayer/APlayer.min.css">
+<script src="/aplayer/APlayer.min.js"></script>
+<script src="/aplayer/color-thief.js"></script>
+<div id="aplayer"></div>
+<script>const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      autoplay: true,
+      audio: [{
+          name: 'Van Gogh',
+          artist: 'Aminé',
+          url: 'http://music.163.com/song/media/outer/url?id=1890421171.mp3',
+          cover: 'https://p1.music.126.net/Tr15UWL9rq9zsDVHA_rMfQ==/109951166563528361.jpg'
+      }]
+  });
+</script>
+<script>const colorThief = new ColorThief();
+  const image = new Image();
+  const xhr = new XMLHttpRequest();
+  const setTheme = (index) => {
+     if (!ap.list.audios[index].theme) {
+        xhr.onload = function(){
+           let coverUrl = URL.createObjectURL(this.response);
+           image.onload = function(){
+           let color = colorThief.getColor(image);
+           ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+           URL.revokeObjectURL(coverUrl)
+            };
+           image.src = coverUrl;
+           }
+        xhr.open('GET', ap.list.audios[index].cover, true);
+        xhr.responseType = 'blob';
+        xhr.send();
+        }
+        };
+ setTheme(ap.list.index);
+  ap.on('listswitch', (index) => {
+  setTheme(index);
+  });
+</script>
+
+
+<link rel="stylesheet" href="/highlight/agate.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script src='https://luvsia.com/live2d/autoload.js'></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+
+<script type="text/javascript" src="/js/love.js"></script>
+
+
 </head>
 
 <body>

@@ -211,9 +211,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Tue, 25 Jan 2022 13:12:12 &#43;0000"
+                  Modified <relative-time datetime="Tue, 25 Jan 2022 13:15:15 &#43;0000"
                     class="no-wrap">
-                    Tue, 25 Jan 2022 13:12:12 &#43;0000</relative-time>
+                    Tue, 25 Jan 2022 13:15:15 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -315,7 +315,7 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p><em>更新软件源</em></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">apt</span> <span class="nx">update</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">apt</span> <span style="color:#a6e22e">update</span>
 </code></pre></div><h2 id="搭建思路">搭建思路</h2>
 <p><strong>预留一级域名搭建网站</strong>，<strong><del>给各个应用添加前端网页根路径。</del></strong></p>
 <p><strong>后因部分应用无法添加<code>二级目录</code>（网页根路径），所以这里只能使用添加<code>二级域名</code>的思路，区别各个应用。</strong></p>
@@ -338,9 +338,9 @@ if (!doNotTrack) {
 </table>
 <p><strong>1.使用一键配置工具。</strong>
 一键脚本集成工具</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget --no-check-certificate https://raw.githubusercontent.com/jinwyp/one_click_script/master/trojan_v2ray_install.sh <span class="o">&amp;&amp;</span> chmod +x ./trojan_v2ray_install.sh <span class="o">&amp;&amp;</span> ./trojan_v2ray_install.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget --no-check-certificate https://raw.githubusercontent.com/jinwyp/one_click_script/master/trojan_v2ray_install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x ./trojan_v2ray_install.sh <span style="color:#f92672">&amp;&amp;</span> ./trojan_v2ray_install.sh
 </code></pre></div><p>或</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget -O install.sh http://download.yu.al/install/install-ubuntu_6.0.sh <span class="o">&amp;&amp;</span> bash install.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -O install.sh http://download.yu.al/install/install-ubuntu_6.0.sh <span style="color:#f92672">&amp;&amp;</span> bash install.sh
 </code></pre></div><p><strong>2.安装<code>nginx-1.21</code>、<code>mysql-5.5</code>、<code>php-7.4</code>、<code>phpmyadmin-5.0</code>四件套</strong></p>
 <p><strong>3.添加站点。</strong></p>
 <table>
@@ -379,11 +379,11 @@ if (!doNotTrack) {
 <p><strong><code>宝塔面板</code>申请的证书在如下目录：<code>/www/server/panel/vhost/cert/你的域名/</code> 目录之下。</strong></p>
 <p><em><strong><code>强制开启https</code></strong></em>。</p>
 <p><strong>5.关闭面板<code>安全入户</code>，即删除<code>二级目录</code>。</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">panel</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">admin_path</span><span class="o">.</span><span class="na">pl</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">rm <span style="color:#f92672">-</span>f <span style="color:#f92672">/</span>www<span style="color:#f92672">/</span>server<span style="color:#f92672">/</span>panel<span style="color:#f92672">/</span>data<span style="color:#f92672">/</span>admin_path<span style="color:#f92672">.</span><span style="color:#a6e22e">pl</span>
 </code></pre></div><p><strong>6.在<code>Cloudflare</code>中解析二级域名<code>b.example.com</code></strong></p>
 <p><strong>7.添加反向代理到<code>b.example.com</code></strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">代理名称</span> <span class="nx">宝塔面板</span>
-<span class="nx">目标URL</span>  <span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8888  发送域名 $host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">代理名称</span> <span style="color:#a6e22e">宝塔面板</span>
+<span style="color:#a6e22e">目标URL</span>  <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:8888  发送域名 $host
 </span></code></pre></div><p><strong>8.安装<code>docker</code>安装器。</strong></p>
 <h3 id="x-ui">X-UI</h3>
 <table>
@@ -403,40 +403,40 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p><strong>1.镜像源</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">enwaiax</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">ui</span><span class="o">:</span><span class="n">latest</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">enwaiax<span style="color:#f92672">/</span>x<span style="color:#f92672">-</span>ui<span style="color:#f92672">:</span>latest
 </code></pre></div><p><strong>2.安装运行</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir x-ui <span class="o">&amp;&amp;</span> <span class="nb">cd</span> x-ui
-docker run -itd --network<span class="o">=</span>host <span class="se">\
-</span><span class="se"></span>    -v <span class="nv">$PWD</span>/db/:/etc/x-ui/ <span class="se">\
-</span><span class="se"></span>    -v <span class="nv">$PWD</span>/cert/:/root/cert/ <span class="se">\
-</span><span class="se"></span>    --name x-ui --restart<span class="o">=</span>unless-stopped <span class="se">\
-</span><span class="se"></span>    enwaiax/x-ui:latest
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir x-ui <span style="color:#f92672">&amp;&amp;</span> cd x-ui
+docker run -itd --network<span style="color:#f92672">=</span>host <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -v $PWD/db/:/etc/x-ui/ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -v $PWD/cert/:/root/cert/ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name x-ui --restart<span style="color:#f92672">=</span>unless-stopped <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    enwaiax/x-ui:latest
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>x.example.com</code></strong></p>
 <p><strong>4.添加反向代理到<code>x.example.com</code></strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">代理名称</span> <span class="nx">x</span><span class="o">-</span><span class="nx">ui</span>
-<span class="nx">目标URL</span>  <span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:54321  发送域名 $host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">代理名称</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ui</span>
+<span style="color:#a6e22e">目标URL</span>  <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:54321  发送域名 $host
 </span></code></pre></div><p><strong>5.配置<code>VMess</code>协议，开启<code>ws</code>，路径<code>/xiya</code>。</strong></p>
 <p><strong>6.开启CDN加速，在<code>nginx</code>配置文件中添加如下。</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">location</span> <span class="o">/</span><span class="nx">xiya</span> <span class="p">{</span>
-        <span class="nx">proxy_redirect</span> <span class="nx">off</span><span class="p">;</span>
-        <span class="nx">proxy_pass</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:22513;
-</span><span class="c1"></span>        <span class="nx">proxy_http_version</span> <span class="mf">1.1</span><span class="p">;</span>
-        <span class="nx">proxy_set_header</span> <span class="nx">Upgrade</span> <span class="nx">$http_upgrade</span><span class="p">;</span>
-        <span class="nx">proxy_set_header</span> <span class="nx">Connection</span> <span class="s2">&#34;upgrade&#34;</span><span class="p">;</span>
-        <span class="nx">proxy_set_header</span> <span class="nx">Host</span> <span class="nx">$http_host</span><span class="p">;</span>
-        <span class="nx">proxy_read_timeout</span> <span class="mi">300</span><span class="nx">s</span><span class="p">;</span>
-        <span class="err">#</span> <span class="nx">Show</span> <span class="nx">realip</span> <span class="k">in</span> <span class="nx">v2ray</span> <span class="nx">access</span><span class="p">.</span><span class="nx">log</span>
-        <span class="nx">proxy_set_header</span> <span class="nx">X</span><span class="o">-</span><span class="nx">Real</span><span class="o">-</span><span class="nx">IP</span> <span class="nx">$remote_addr</span><span class="p">;</span>
-        <span class="nx">proxy_set_header</span> <span class="nx">X</span><span class="o">-</span><span class="nx">Forwarded</span><span class="o">-</span><span class="nx">For</span> <span class="nx">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">location</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">xiya</span> {
+        <span style="color:#a6e22e">proxy_redirect</span> <span style="color:#a6e22e">off</span>;
+        <span style="color:#a6e22e">proxy_pass</span> <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:22513;
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">proxy_http_version</span> <span style="color:#ae81ff">1.1</span>;
+        <span style="color:#a6e22e">proxy_set_header</span> <span style="color:#a6e22e">Upgrade</span> <span style="color:#a6e22e">$http_upgrade</span>;
+        <span style="color:#a6e22e">proxy_set_header</span> <span style="color:#a6e22e">Connection</span> <span style="color:#e6db74">&#34;upgrade&#34;</span>;
+        <span style="color:#a6e22e">proxy_set_header</span> <span style="color:#a6e22e">Host</span> <span style="color:#a6e22e">$http_host</span>;
+        <span style="color:#a6e22e">proxy_read_timeout</span> <span style="color:#ae81ff">300</span><span style="color:#a6e22e">s</span>;
+        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Show</span> <span style="color:#a6e22e">realip</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">v2ray</span> <span style="color:#a6e22e">access</span>.<span style="color:#a6e22e">log</span>
+        <span style="color:#a6e22e">proxy_set_header</span> <span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Real</span><span style="color:#f92672">-</span><span style="color:#a6e22e">IP</span> <span style="color:#a6e22e">$remote_addr</span>;
+        <span style="color:#a6e22e">proxy_set_header</span> <span style="color:#a6e22e">X</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Forwarded</span><span style="color:#f92672">-</span><span style="color:#a6e22e">For</span> <span style="color:#a6e22e">$proxy_add_x_forwarded_for</span>;
+  }
 </code></pre></div><p><strong>7.开启<code>Cloudflare</code>小云朵，并优选IP。</strong></p>
 <p><strong>8.<a href="https://github.com/XIU2/CloudflareSpeedTest/releases">下载优选IP</a> ，选出优选IP后，客户端如下配置</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="gi">+ 填入优选IP
-</span><span class="gi">+ 更改端口为443；
-</span><span class="gi">+ host设置x.example.com；
-</span><span class="gi">+ 开启tls。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#a6e22e">+ 填入优选IP
+</span><span style="color:#a6e22e">+ 更改端口为443；
+</span><span style="color:#a6e22e">+ host设置x.example.com；
+</span><span style="color:#a6e22e">+ 开启tls。
 </span></code></pre></div><p><strong>9.Surge配置</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="err">🇭🇰</span> <span class="nx">VMess</span> <span class="p">=</span> <span class="nx">vmess</span><span class="p">,</span> <span class="mf">104.19.79.223</span><span class="p">,</span> <span class="mi">443</span><span class="p">,</span> <span class="nx">username</span><span class="p">=</span><span class="mi">2</span><span class="nx">d285385</span><span class="o">-</span><span class="mi">836</span><span class="nx">d</span><span class="o">-</span><span class="mi">4</span><span class="nx">b30</span><span class="o">-</span><span class="nx">f32c</span><span class="o">-</span><span class="mi">11</span><span class="nx">cdd637aeed</span><span class="p">,</span> <span class="nx">tls</span><span class="p">=</span><span class="kc">true</span><span class="p">,</span> <span class="nx">tls13</span><span class="p">=</span><span class="kc">false</span><span class="p">,</span> <span class="nx">ws</span><span class="p">=</span><span class="kc">true</span><span class="p">,</span> <span class="nx">ws</span><span class="o">-</span><span class="nx">path</span><span class="p">=</span><span class="o">/</span><span class="nx">xiya</span><span class="p">,</span> <span class="nx">sni</span><span class="p">=</span><span class="nx">example</span><span class="p">.</span><span class="nx">com</span><span class="p">,</span> <span class="nx">ws</span><span class="o">-</span><span class="nx">headers</span><span class="p">=</span><span class="nx">Host</span><span class="p">:</span><span class="nx">example</span><span class="p">.</span><span class="nx">com</span><span class="p">,</span> <span class="nx">skip</span><span class="o">-</span><span class="nx">cert</span><span class="o">-</span><span class="nx">verify</span><span class="p">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">tfo</span><span class="p">=</span><span class="kc">false</span><span class="p">,</span> <span class="nx">udp</span><span class="o">-</span><span class="nx">relay</span><span class="p">=</span><span class="kc">true</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">🇭🇰</span> <span style="color:#a6e22e">VMess</span> = <span style="color:#a6e22e">vmess</span>, <span style="color:#ae81ff">104.19.79.223</span>, <span style="color:#ae81ff">443</span>, <span style="color:#a6e22e">username</span>=<span style="color:#ae81ff">2</span><span style="color:#a6e22e">d285385</span><span style="color:#f92672">-</span><span style="color:#ae81ff">836</span><span style="color:#a6e22e">d</span><span style="color:#f92672">-</span><span style="color:#ae81ff">4</span><span style="color:#a6e22e">b30</span><span style="color:#f92672">-</span><span style="color:#a6e22e">f32c</span><span style="color:#f92672">-</span><span style="color:#ae81ff">11</span><span style="color:#a6e22e">cdd637aeed</span>, <span style="color:#a6e22e">tls</span>=<span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">tls13</span>=<span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">ws</span>=<span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">ws</span><span style="color:#f92672">-</span><span style="color:#a6e22e">path</span>=<span style="color:#f92672">/</span><span style="color:#a6e22e">xiya</span>, <span style="color:#a6e22e">sni</span>=<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span>, <span style="color:#a6e22e">ws</span><span style="color:#f92672">-</span><span style="color:#a6e22e">headers</span>=<span style="color:#a6e22e">Host</span>:<span style="color:#a6e22e">example</span>.<span style="color:#a6e22e">com</span>, <span style="color:#a6e22e">skip</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cert</span><span style="color:#f92672">-</span><span style="color:#a6e22e">verify</span>=<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">tfo</span>=<span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">udp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">relay</span>=<span style="color:#66d9ef">true</span>
 </code></pre></div><h3 id="alist">Alist</h3>
 <table>
 <thead>
@@ -455,13 +455,13 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </tbody>
 </table>
 <p><strong>1.添加镜像源</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">xhofe</span><span class="o">/</span><span class="nx">alist</span><span class="o">:</span><span class="nx">latest</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">xhofe</span><span style="color:#f92672">/</span><span style="color:#a6e22e">alist</span><span style="color:#f92672">:</span><span style="color:#a6e22e">latest</span>
 </code></pre></div><p><strong>2.不配置容器，使用代码</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">--</span><span class="n">restart</span><span class="o">=</span><span class="n">always</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">alist</span><span class="o">:/</span><span class="n">opt</span><span class="o">/</span><span class="n">alist</span><span class="o">/</span><span class="n">data</span> <span class="o">-</span><span class="n">p</span> <span class="n">5244</span><span class="o">:</span><span class="n">5244</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="s">&#34;alist&#34;</span> <span class="n">xhofe</span><span class="o">/</span><span class="n">alist</span><span class="o">:</span><span class="n">latest</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">docker run <span style="color:#f92672">-</span>d <span style="color:#f92672">--</span>restart<span style="color:#f92672">=</span>always <span style="color:#f92672">-</span>v <span style="color:#f92672">/</span>etc<span style="color:#f92672">/</span>alist<span style="color:#f92672">:/</span>opt<span style="color:#f92672">/</span>alist<span style="color:#f92672">/</span>data <span style="color:#f92672">-</span>p 5244<span style="color:#f92672">:</span>5244 <span style="color:#f92672">--</span>name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alist&#34;</span> xhofe<span style="color:#f92672">/</span>alist<span style="color:#f92672">:</span>latest
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>a.example.com</code></strong></p>
 <p><strong>4.添加反向代理到a.example.com</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">代理名称</span> <span class="nx">alist</span>
-<span class="nx">目标URL</span>  <span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:5244  发送域名 $host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">代理名称</span> <span style="color:#a6e22e">alist</span>
+<span style="color:#a6e22e">目标URL</span>  <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:5244  发送域名 $host
 </span></code></pre></div><h3 id="transmission">Transmission</h3>
 <table>
 <thead>
@@ -481,53 +481,53 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </table>
 <h4 id="1docker安装">1.Docker安装</h4>
 <p><strong>构建镜像</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="c1"># 克隆仓库
-</span><span class="c1"></span><span class="nx">git</span> <span class="k">clone</span> <span class="nx">https</span><span class="o">://</span><span class="nx">github</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">helloxz</span><span class="o">/</span><span class="nx">docker</span><span class="o">-</span><span class="nx">transmission</span><span class="o">.</span><span class="nx">git</span>
-<span class="c1"># 进入仓库目录
-</span><span class="c1"></span><span class="nx">cd</span> <span class="nx">docker</span><span class="o">-</span><span class="nx">transmission</span>
-<span class="c1"># 构建Docker镜像
-</span><span class="c1"></span><span class="nx">docker</span> <span class="nx">build</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">luvsia</span><span class="o">:</span><span class="nx">transmission</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e"># 克隆仓库
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">git</span> <span style="color:#66d9ef">clone</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">://</span><span style="color:#a6e22e">github</span><span style="color:#f92672">.</span><span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">helloxz</span><span style="color:#f92672">/</span><span style="color:#a6e22e">docker</span><span style="color:#f92672">-</span><span style="color:#a6e22e">transmission</span><span style="color:#f92672">.</span><span style="color:#a6e22e">git</span>
+<span style="color:#75715e"># 进入仓库目录
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">docker</span><span style="color:#f92672">-</span><span style="color:#a6e22e">transmission</span>
+<span style="color:#75715e"># 构建Docker镜像
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">docker</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">t</span> <span style="color:#a6e22e">luvsia</span><span style="color:#f92672">:</span><span style="color:#a6e22e">transmission</span>
 </code></pre></div><p><strong>运行镜像</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">docker</span> <span class="nx">run</span> <span class="o">-</span><span class="nx">d</span> <span class="o">--</span><span class="nx">name</span><span class="o">=</span><span class="s2">&#34;transmission&#34;</span> <span class="o">\</span>
-  <span class="o">-</span><span class="nx">e</span> <span class="nx">USERNAME</span><span class="o">=</span><span class="nx">ventus</span> <span class="o">\</span>
-  <span class="o">-</span><span class="nx">e</span> <span class="nx">PASSWORD</span><span class="o">=</span><span class="nx">ysw554247430</span> <span class="o">\</span>
-  <span class="o">-</span><span class="nx">p</span> <span class="mi">9091</span><span class="o">:</span><span class="mi">9091</span> <span class="o">\</span>
-  <span class="o">-</span><span class="nx">p</span> <span class="mi">51413</span><span class="o">:</span><span class="mi">51413</span> <span class="o">\</span>
-  <span class="o">-</span><span class="nx">p</span> <span class="mi">51413</span><span class="o">:</span><span class="mi">51413</span><span class="o">/</span><span class="nx">udp</span> <span class="o">\</span>
-  <span class="o">-</span><span class="nx">v</span> <span class="o">/</span><span class="nx">GoogleDrive</span><span class="o">:</span><span class="err">/Downloads \</span>
-  <span class="o">--</span><span class="nx">restart</span><span class="o">=</span><span class="nx">always</span> <span class="o">\</span>
-  <span class="nx">luvsia</span><span class="o">:</span><span class="nx">transmission</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">docker</span> <span style="color:#a6e22e">run</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;transmission&#34;</span> <span style="color:#f92672">\</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">e</span> <span style="color:#a6e22e">USERNAME</span><span style="color:#f92672">=</span><span style="color:#a6e22e">ventus</span> <span style="color:#f92672">\</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">e</span> <span style="color:#a6e22e">PASSWORD</span><span style="color:#f92672">=</span><span style="color:#a6e22e">ysw554247430</span> <span style="color:#f92672">\</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#ae81ff">9091</span><span style="color:#f92672">:</span><span style="color:#ae81ff">9091</span> <span style="color:#f92672">\</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#ae81ff">51413</span><span style="color:#f92672">:</span><span style="color:#ae81ff">51413</span> <span style="color:#f92672">\</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#ae81ff">51413</span><span style="color:#f92672">:</span><span style="color:#ae81ff">51413</span><span style="color:#f92672">/</span><span style="color:#a6e22e">udp</span> <span style="color:#f92672">\</span>
+  <span style="color:#f92672">-</span><span style="color:#a6e22e">v</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">GoogleDrive</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">/Downloads \</span>
+  <span style="color:#f92672">--</span><span style="color:#a6e22e">restart</span><span style="color:#f92672">=</span><span style="color:#a6e22e">always</span> <span style="color:#f92672">\</span>
+  <span style="color:#a6e22e">luvsia</span><span style="color:#f92672">:</span><span style="color:#a6e22e">transmission</span>
 </code></pre></div><p><strong>/GoogleDrive:本地下载目录为<a href="#Rclone-mount-GoogleDrive"><code>Rclone</code> mount <code>GoogleDrive</code></a>中的谷歌云盘目录，自动下载到谷歌云盘，实现无线网盘</strong></p>
 <h4 id="2-1普通安装">2-1.普通安装</h4>
 <p><strong>安装transmission-daemon</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">transmission</span><span class="o">-</span><span class="nx">daemon</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">apt</span><span style="color:#f92672">-</span><span style="color:#a6e22e">get</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span>
 </code></pre></div><p><strong>首先执行一次启动和停止命令，防止配置文件被覆盖</strong></p>
 <p>启动</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">service</span> <span class="nx">transmission</span><span class="o">-</span><span class="nx">daemon</span> <span class="nx">start</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#a6e22e">start</span>
 </code></pre></div><p>停止</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">service</span> <span class="nx">transmission</span><span class="o">-</span><span class="nx">daemon</span> <span class="nx">stop</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#a6e22e">stop</span>
 </code></pre></div><p>重启</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">service</span> <span class="nx">transmission</span><span class="o">-</span><span class="nx">daemon</span> <span class="nx">restart</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#a6e22e">restart</span>
 </code></pre></div><p><strong>修改transmission-daemon配置文件</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">nano</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">transmission</span><span class="o">-</span><span class="n">daemon</span><span class="o">/</span><span class="n">info</span><span class="o">/</span><span class="n">settings</span><span class="o">.</span><span class="na">json</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="s2">&#34;rpc-host-whitelist&#34;</span><span class="o">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span>  <span class="c1">//域名白名单，*为允许所有
-</span><span class="c1"></span><span class="s2">&#34;rpc-host-whitelist-enabled&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">//是否开启白名单，false为否
-</span><span class="c1"></span><span class="s2">&#34;rpc-password&#34;</span><span class="o">:</span> <span class="s2">&#34;远程登录密码&#34;</span><span class="p">,</span>
-<span class="s2">&#34;rpc-port&#34;</span><span class="o">:</span> <span class="mi">9091</span><span class="p">,</span> <span class="c1">//远程登录端口
-</span><span class="c1"></span><span class="s2">&#34;rpc-username&#34;</span><span class="o">:</span> <span class="s2">&#34;远程帐号&#34;</span><span class="p">,</span>
-<span class="s2">&#34;rpc-whitelist&#34;</span><span class="o">:</span> <span class="s2">&#34;*&#34;</span><span class="p">,</span> <span class="c1">//ip白名单
-</span><span class="c1"></span><span class="s2">&#34;rpc-whitelist-enabled&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>  <span class="c1">//是否开启ip白名单，false为否
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">nano <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>lib<span style="color:#f92672">/</span>transmission<span style="color:#f92672">-</span>daemon<span style="color:#f92672">/</span>info<span style="color:#f92672">/</span>settings<span style="color:#f92672">.</span><span style="color:#a6e22e">json</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#34;rpc-host-whitelist&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;*&#34;</span>,  <span style="color:#75715e">//域名白名单，*为允许所有
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;rpc-host-whitelist-enabled&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">//是否开启白名单，false为否
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;rpc-password&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;远程登录密码&#34;</span>,
+<span style="color:#e6db74">&#34;rpc-port&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">9091</span>, <span style="color:#75715e">//远程登录端口
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;rpc-username&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;远程帐号&#34;</span>,
+<span style="color:#e6db74">&#34;rpc-whitelist&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;*&#34;</span>, <span style="color:#75715e">//ip白名单
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;rpc-whitelist-enabled&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,  <span style="color:#75715e">//是否开启ip白名单，false为否
 </span></code></pre></div><p><strong>执行启动命令</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">service</span> <span class="nx">transmission</span><span class="o">-</span><span class="nx">daemon</span> <span class="nx">start</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#a6e22e">start</span>
 </code></pre></div><h4 id="2-2transmission-web-controlhttpsgithubcomronggangtransmission-web-controlwikilinux-installation-cn美化">2-2.<a href="https://github.com/ronggang/transmission-web-control/wiki/Linux-Installation-CN">transmission-web-control</a>美化</h4>
 <p><strong>获取安装脚本</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">wget</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">wget</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
 </span></code></pre></div><p><strong>执行安装脚本</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">bash</span> <span class="nx">install</span><span class="o">-</span><span class="nx">tr</span><span class="o">-</span><span class="nx">control</span><span class="o">-</span><span class="nx">cn</span><span class="p">.</span><span class="nx">sh</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bash</span> <span style="color:#a6e22e">install</span><span style="color:#f92672">-</span><span style="color:#a6e22e">tr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">control</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cn</span>.<span style="color:#a6e22e">sh</span>
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>t.example.com</code></strong></p>
 <p><strong>4.添加反向代理到t.example.com</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">代理名称</span> <span class="nx">transmission</span>
-<span class="nx">目标URL</span>  <span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:9091  发送域名 $host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">代理名称</span> <span style="color:#a6e22e">transmission</span>
+<span style="color:#a6e22e">目标URL</span>  <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:9091  发送域名 $host
 </span></code></pre></div><p><strong>5.修改默认保存目录<code>/GoogleDrive</code>，启用临时目录<code>/Downloads</code>，记得给<code>!权限!</code></strong></p>
 <h3 id="rclone">Rclone</h3>
 <table>
@@ -547,55 +547,55 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </tbody>
 </table>
 <p><strong>1.安装<code>Rclone</code></strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://www.moerats.com/usr/shell/rclone_debian.sh <span class="o">&amp;&amp;</span> bash rclone_debian.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://www.moerats.com/usr/shell/rclone_debian.sh <span style="color:#f92672">&amp;&amp;</span> bash rclone_debian.sh
 </code></pre></div><p><strong>2.初始化配置</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">rclone</span> <span class="nx">config</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">rclone</span> <span style="color:#a6e22e">config</span>
 </code></pre></div><p><strong>3.选择<code>GoogleDrive</code>，剩余操作参考<a href="https://www.moerats.com/archives/491/">这里</a></strong></p>
 <p><strong>4.挂载磁盘</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">mkdir</span> <span class="o">-</span><span class="nx">p</span> <span class="o">/</span><span class="nx">GoogleDrive</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p /Downloads
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="err">/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
- <span class="o">--</span><span class="nx">umask</span> <span class="mi">0000</span> <span class="o">\</span>
- <span class="o">--</span><span class="k">default</span><span class="o">-</span><span class="nx">permissions</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">allow</span><span class="o">-</span><span class="nx">non</span><span class="o">-</span><span class="nx">empty</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">allow</span><span class="o">-</span><span class="nx">other</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">transfers</span> <span class="mi">4</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">buffer</span><span class="o">-</span><span class="nx">size</span> <span class="mi">32</span><span class="nx">M</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">low</span><span class="o">-</span><span class="nx">level</span><span class="o">-</span><span class="nx">retries</span> <span class="mi">200</span>
- <span class="o">--</span><span class="nx">dir</span><span class="o">-</span><span class="nx">cache</span><span class="o">-</span><span class="nx">time</span> <span class="mi">12</span><span class="nx">h</span>
- <span class="o">--</span><span class="nx">vfs</span><span class="o">-</span><span class="nx">read</span><span class="o">-</span><span class="nx">chunk</span><span class="o">-</span><span class="nx">size</span> <span class="mi">32</span><span class="nx">M</span>
- <span class="o">--</span><span class="nx">vfs</span><span class="o">-</span><span class="nx">read</span><span class="o">-</span><span class="nx">chunk</span><span class="o">-</span><span class="nx">size</span><span class="o">-</span><span class="nx">limit</span> <span class="mi">1</span><span class="nx">G</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">mkdir</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">GoogleDrive</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">mkdir -p /Downloads
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#960050;background-color:#1e0010">/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">umask</span> <span style="color:#ae81ff">0000</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#66d9ef">default</span><span style="color:#f92672">-</span><span style="color:#a6e22e">permissions</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">non</span><span style="color:#f92672">-</span><span style="color:#a6e22e">empty</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">other</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">transfers</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">buffer</span><span style="color:#f92672">-</span><span style="color:#a6e22e">size</span> <span style="color:#ae81ff">32</span><span style="color:#a6e22e">M</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">low</span><span style="color:#f92672">-</span><span style="color:#a6e22e">level</span><span style="color:#f92672">-</span><span style="color:#a6e22e">retries</span> <span style="color:#ae81ff">200</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">dir</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cache</span><span style="color:#f92672">-</span><span style="color:#a6e22e">time</span> <span style="color:#ae81ff">12</span><span style="color:#a6e22e">h</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">vfs</span><span style="color:#f92672">-</span><span style="color:#a6e22e">read</span><span style="color:#f92672">-</span><span style="color:#a6e22e">chunk</span><span style="color:#f92672">-</span><span style="color:#a6e22e">size</span> <span style="color:#ae81ff">32</span><span style="color:#a6e22e">M</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">vfs</span><span style="color:#f92672">-</span><span style="color:#a6e22e">read</span><span style="color:#f92672">-</span><span style="color:#a6e22e">chunk</span><span style="color:#f92672">-</span><span style="color:#a6e22e">size</span><span style="color:#f92672">-</span><span style="color:#a6e22e">limit</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">G</span>
 </code></pre></div><p><strong>5.配置开机自动挂载</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">cat</span> <span class="o">&gt;</span> <span class="err">/etc/systemd/system/rclone.service &lt;&lt;EOF</span>
-<span class="p">[</span><span class="nx">Unit</span><span class="p">]</span>
-<span class="nx">Description</span><span class="o">=</span><span class="nx">Rclone</span>
-<span class="nx">AssertPathIsDirectory</span><span class="o">=</span><span class="nx">LocalFolder</span>
-<span class="nx">After</span><span class="o">=</span><span class="nx">network</span><span class="o">-</span><span class="nx">online</span><span class="p">.</span><span class="nx">target</span>
-<span class="p">[</span><span class="nx">Service</span><span class="p">]</span>
-<span class="nx">Type</span><span class="o">=</span><span class="nx">simple</span>
-<span class="nx">ExecStart</span><span class="o">=</span><span class="err">/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
- <span class="o">--</span><span class="nx">umask</span> <span class="mi">0000</span> <span class="o">\</span>
- <span class="o">--</span><span class="k">default</span><span class="o">-</span><span class="nx">permissions</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">allow</span><span class="o">-</span><span class="nx">non</span><span class="o">-</span><span class="nx">empty</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">allow</span><span class="o">-</span><span class="nx">other</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">buffer</span><span class="o">-</span><span class="nx">size</span> <span class="mi">32</span><span class="nx">M</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">dir</span><span class="o">-</span><span class="nx">cache</span><span class="o">-</span><span class="nx">time</span> <span class="mi">12</span><span class="nx">h</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">vfs</span><span class="o">-</span><span class="nx">read</span><span class="o">-</span><span class="nx">chunk</span><span class="o">-</span><span class="nx">size</span> <span class="mi">64</span><span class="nx">M</span> <span class="o">\</span>
- <span class="o">--</span><span class="nx">vfs</span><span class="o">-</span><span class="nx">read</span><span class="o">-</span><span class="nx">chunk</span><span class="o">-</span><span class="nx">size</span><span class="o">-</span><span class="nx">limit</span> <span class="mi">1</span><span class="nx">G</span>
-<span class="nx">ExecStop</span><span class="o">=</span><span class="err">/bin/fusermount -u LocalFolder</span>
-<span class="nx">Restart</span><span class="o">=</span><span class="nx">on</span><span class="o">-</span><span class="nx">abort</span>
-<span class="nx">User</span><span class="o">=</span><span class="nx">root</span>
-<span class="p">[</span><span class="nx">Install</span><span class="p">]</span>
-<span class="nx">WantedBy</span><span class="o">=</span><span class="k">default</span><span class="p">.</span><span class="nx">target</span>
-<span class="nx">EOF</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">cat</span> <span style="color:#f92672">&gt;</span> <span style="color:#960050;background-color:#1e0010">/etc/systemd/system/rclone.service &lt;&lt;EOF</span>
+[<span style="color:#a6e22e">Unit</span>]
+<span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#a6e22e">Rclone</span>
+<span style="color:#a6e22e">AssertPathIsDirectory</span><span style="color:#f92672">=</span><span style="color:#a6e22e">LocalFolder</span>
+<span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#a6e22e">network</span><span style="color:#f92672">-</span><span style="color:#a6e22e">online</span>.<span style="color:#a6e22e">target</span>
+[<span style="color:#a6e22e">Service</span>]
+<span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#a6e22e">simple</span>
+<span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">/usr/bin/rclone mount luvsia:ventus /GoogleDrive \</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">umask</span> <span style="color:#ae81ff">0000</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#66d9ef">default</span><span style="color:#f92672">-</span><span style="color:#a6e22e">permissions</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">non</span><span style="color:#f92672">-</span><span style="color:#a6e22e">empty</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">allow</span><span style="color:#f92672">-</span><span style="color:#a6e22e">other</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">buffer</span><span style="color:#f92672">-</span><span style="color:#a6e22e">size</span> <span style="color:#ae81ff">32</span><span style="color:#a6e22e">M</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">dir</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cache</span><span style="color:#f92672">-</span><span style="color:#a6e22e">time</span> <span style="color:#ae81ff">12</span><span style="color:#a6e22e">h</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">vfs</span><span style="color:#f92672">-</span><span style="color:#a6e22e">read</span><span style="color:#f92672">-</span><span style="color:#a6e22e">chunk</span><span style="color:#f92672">-</span><span style="color:#a6e22e">size</span> <span style="color:#ae81ff">64</span><span style="color:#a6e22e">M</span> <span style="color:#f92672">\</span>
+ <span style="color:#f92672">--</span><span style="color:#a6e22e">vfs</span><span style="color:#f92672">-</span><span style="color:#a6e22e">read</span><span style="color:#f92672">-</span><span style="color:#a6e22e">chunk</span><span style="color:#f92672">-</span><span style="color:#a6e22e">size</span><span style="color:#f92672">-</span><span style="color:#a6e22e">limit</span> <span style="color:#ae81ff">1</span><span style="color:#a6e22e">G</span>
+<span style="color:#a6e22e">ExecStop</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">/bin/fusermount -u LocalFolder</span>
+<span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#a6e22e">on</span><span style="color:#f92672">-</span><span style="color:#a6e22e">abort</span>
+<span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#a6e22e">root</span>
+[<span style="color:#a6e22e">Install</span>]
+<span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#66d9ef">default</span>.<span style="color:#a6e22e">target</span>
+<span style="color:#a6e22e">EOF</span>
 </code></pre></div><p><strong>挂载成功后，输入<code>df -h</code>命令即可看到挂载的磁盘</strong></p>
 <p><strong>6.常用命令</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">systemctl</span> <span class="nx">start</span> <span class="nx">rclone</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">systemctl</span> <span class="nx">enable</span> <span class="nx">rclone</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">systemctl</span> <span class="nx">stop</span> <span class="nx">rclone</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">systemctl</span> <span class="nx">status</span> <span class="nx">rclone</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">start</span> <span style="color:#a6e22e">rclone</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">enable</span> <span style="color:#a6e22e">rclone</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">stop</span> <span style="color:#a6e22e">rclone</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">status</span> <span style="color:#a6e22e">rclone</span>
 </code></pre></div><p><strong>7.<code>Transmission</code>添加<code>rlone</code>挂载在<code>GoogleDrive</code>上的路径</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="o">/</span><span class="nx">GoogleDrive</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">/</span><span style="color:#a6e22e">GoogleDrive</span>
 </code></pre></div><h3 id="live-torrent">Live-torrent</h3>
 <table>
 <thead>
@@ -614,13 +614,13 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </tbody>
 </table>
 <p><strong>1.镜像源</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">davenchy</span><span class="o">/</span><span class="nx">live</span><span class="o">-</span><span class="nx">torrent</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">davenchy</span><span style="color:#f92672">/</span><span style="color:#a6e22e">live</span><span style="color:#f92672">-</span><span style="color:#a6e22e">torrent</span>
 </code></pre></div><p><strong>2.安装运行</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">docker</span> <span class="nx">run</span> <span class="o">--</span><span class="nx">restart</span><span class="o">=</span><span class="nx">always</span> <span class="o">--</span><span class="nx">name</span> <span class="nx">live</span><span class="o">-</span><span class="nx">torrent</span> <span class="o">-</span><span class="nx">d</span> <span class="o">-</span><span class="nx">p</span> <span class="mi">8080</span><span class="o">:</span><span class="mi">8080</span> <span class="nx">davenchy</span><span class="o">/</span><span class="nx">live</span><span class="o">-</span><span class="nx">torrent</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">docker</span> <span style="color:#a6e22e">run</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">restart</span><span style="color:#f92672">=</span><span style="color:#a6e22e">always</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">name</span> <span style="color:#a6e22e">live</span><span style="color:#f92672">-</span><span style="color:#a6e22e">torrent</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">d</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">p</span> <span style="color:#ae81ff">8080</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8080</span> <span style="color:#a6e22e">davenchy</span><span style="color:#f92672">/</span><span style="color:#a6e22e">live</span><span style="color:#f92672">-</span><span style="color:#a6e22e">torrent</span>
 </code></pre></div><p><strong>3.在<code>Cloudflare</code>中解析二级域名<code>live.example.com</code></strong></p>
 <p><strong>4.添加反向代理到<code>live.example.com</code></strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">代理名称</span> <span class="nx">Live</span><span class="o">-</span><span class="nx">torrent</span>
-<span class="nx">目标URL</span>  <span class="nx">http</span><span class="o">:</span><span class="c1">//127.0.0.1:8080  发送域名 $host
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">代理名称</span> <span style="color:#a6e22e">Live</span><span style="color:#f92672">-</span><span style="color:#a6e22e">torrent</span>
+<span style="color:#a6e22e">目标URL</span>  <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:8080  发送域名 $host
 </span></code></pre></div><h3 id="cloudflare-warp">Cloudflare WARP</h3>
 <table>
 <thead>
@@ -639,15 +639,15 @@ docker run -itd --network<span class="o">=</span>host <span class="se">\
 </tbody>
 </table>
 <p><strong>功能菜单</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">bash</span> <span class="o">&lt;</span><span class="p">(</span><span class="nx">curl</span> <span class="o">-</span><span class="nx">fsSL</span> <span class="nx">git</span><span class="p">.</span><span class="nx">io</span><span class="o">/</span><span class="nx">warp</span><span class="p">.</span><span class="nx">sh</span><span class="p">)</span> <span class="nx">menu</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bash</span> <span style="color:#f92672">&lt;</span>(<span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fsSL</span> <span style="color:#a6e22e">git</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">warp</span>.<span style="color:#a6e22e">sh</span>) <span style="color:#a6e22e">menu</span>
 </code></pre></div><p><strong><code>WARP WireGuard</code> 双栈全局网络</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">bash</span> <span class="o">&lt;</span><span class="p">(</span><span class="nx">curl</span> <span class="o">-</span><span class="nx">fsSL</span> <span class="nx">git</span><span class="p">.</span><span class="nx">io</span><span class="o">/</span><span class="nx">warp</span><span class="p">.</span><span class="nx">sh</span><span class="p">)</span> <span class="nx">d</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bash</span> <span style="color:#f92672">&lt;</span>(<span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fsSL</span> <span style="color:#a6e22e">git</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">warp</span>.<span style="color:#a6e22e">sh</span>) <span style="color:#a6e22e">d</span>
 </code></pre></div><p><strong><code>IPv4</code> 网络</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">bash</span> <span class="o">&lt;</span><span class="p">(</span><span class="nx">curl</span> <span class="o">-</span><span class="nx">fsSL</span> <span class="nx">git</span><span class="p">.</span><span class="nx">io</span><span class="o">/</span><span class="nx">warp</span><span class="p">.</span><span class="nx">sh</span><span class="p">)</span> <span class="mi">4</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bash</span> <span style="color:#f92672">&lt;</span>(<span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fsSL</span> <span style="color:#a6e22e">git</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">warp</span>.<span style="color:#a6e22e">sh</span>) <span style="color:#ae81ff">4</span>
 </code></pre></div><p><strong><code>IPv6</code> 网络</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">bash</span> <span class="o">&lt;</span><span class="p">(</span><span class="nx">curl</span> <span class="o">-</span><span class="nx">fsSL</span> <span class="nx">git</span><span class="p">.</span><span class="nx">io</span><span class="o">/</span><span class="nx">warp</span><span class="p">.</span><span class="nx">sh</span><span class="p">)</span> <span class="mi">6</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bash</span> <span style="color:#f92672">&lt;</span>(<span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fsSL</span> <span style="color:#a6e22e">git</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">warp</span>.<span style="color:#a6e22e">sh</span>) <span style="color:#ae81ff">6</span>
 </code></pre></div><p><strong><code>WARP 官方客户端</code> <code>SOCKS5</code> 代理</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">bash</span> <span class="o">&lt;</span><span class="p">(</span><span class="nx">curl</span> <span class="o">-</span><span class="nx">fsSL</span> <span class="nx">git</span><span class="p">.</span><span class="nx">io</span><span class="o">/</span><span class="nx">warp</span><span class="p">.</span><span class="nx">sh</span><span class="p">)</span> <span class="nx">s5</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">bash</span> <span style="color:#f92672">&lt;</span>(<span style="color:#a6e22e">curl</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fsSL</span> <span style="color:#a6e22e">git</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">warp</span>.<span style="color:#a6e22e">sh</span>) <span style="color:#a6e22e">s5</span>
 </code></pre></div><h2 id="后记">后记</h2>
 <h2 id="感谢">感谢</h2>
 <p><a href="https://github.com/guodongxiaren/README">@guodongxiaren</a><br>

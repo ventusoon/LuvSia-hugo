@@ -215,9 +215,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 26 Jan 2022 08:42:30 &#43;0000"
+                  Modified <relative-time datetime="Wed, 26 Jan 2022 09:04:59 &#43;0000"
                     class="no-wrap">
-                    Wed, 26 Jan 2022 08:42:30 &#43;0000</relative-time>
+                    Wed, 26 Jan 2022 09:04:59 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -241,7 +241,7 @@ if (!doNotTrack) {
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          1902 Words
+                          1848 Words
                     
 
                   </div>
@@ -269,18 +269,18 @@ if (!doNotTrack) {
 <ul>
 <li><strong>目录</strong>
 <ul>
-<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
-<li><a href="#%E6%90%AD%E5%BB%BA%E6%80%9D%E8%B7%AF">搭建思路</a></li>
-<li><a href="#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA">开始搭建</a>
+<li><a href="/post/server-building/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="/post/server-building/#%E6%90%AD%E5%BB%BA%E6%80%9D%E8%B7%AF">搭建思路</a></li>
+<li><a href="/post/server-building/#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA">开始搭建</a>
 <ul>
-<li><a href="#%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF">宝塔面板</a></li>
+<li><a href="/post/server-building/#%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF">宝塔面板</a></li>
 <li><a href="#x-ui">X-UI</a></li>
 <li><a href="#alist">Alist</a></li>
 <li><a href="#transmission">Transmission</a>
 <ul>
-<li><a href="#1docker%E5%AE%89%E8%A3%85">1.Docker安装</a></li>
-<li><a href="#2-1%E6%99%AE%E9%80%9A%E5%AE%89%E8%A3%85">2-1.普通安装</a></li>
-<li><a href="#2-2transmission-web-control%E7%BE%8E%E5%8C%96">2-2.transmission-web-control美化</a></li>
+<li><a href="/post/server-building/#1docker%E5%AE%89%E8%A3%85">1.Docker安装</a></li>
+<li><a href="/post/server-building/#2-1%E6%99%AE%E9%80%9A%E5%AE%89%E8%A3%85">2-1.普通安装</a></li>
+<li><a href="/post/server-building/#2-2transmission-web-control">2-2.transmission web control</a></li>
 </ul>
 </li>
 <li><a href="#rclone">Rclone</a></li>
@@ -290,8 +290,8 @@ if (!doNotTrack) {
 </li>
 </ul>
 </li>
-<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
-<li><a href="#%E6%84%9F%E8%B0%A2">感谢</a></li>
+<li><a href="/post/server-building/#%E5%90%8E%E8%AE%B0">后记</a></li>
+<li><a href="/post/server-building/#%E6%84%9F%E8%B0%A2">感谢</a></li>
 </ul>
 <h2 id="准备工作">准备工作</h2>
 <table>
@@ -523,7 +523,7 @@ docker run -itd --network<span style="color:#f92672">=</span>host <span style="c
 </span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;rpc-whitelist-enabled&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,  <span style="color:#75715e">//是否开启ip白名单，false为否
 </span></code></pre></div><p><strong>执行启动命令</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#a6e22e">start</span>
-</code></pre></div><h4 id="2-2transmission-web-controlhttpsgithubcomronggangtransmission-web-controlwikilinux-installation-cn美化">2-2.<a href="https://github.com/ronggang/transmission-web-control/wiki/Linux-Installation-CN">transmission-web-control</a>美化</h4>
+</code></pre></div><h4 id="2-2transmission-web-control">2-2.transmission web control</h4>
 <p><strong>获取安装脚本</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">wget</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
 </span></code></pre></div><p><strong>执行安装脚本</strong></p>

@@ -122,12 +122,12 @@ if (!doNotTrack) {
       element: document.getElementById('aplayer'),
       narrow: false,
       fixed: true,
-      autoplay: false,
+      autoplay: true,
       mutex: true,
       lrcType: 3,
   });
     $.ajax({
-    url: 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=3778678',
+    url: 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=6690262418',
     success: function (list) {
     ap.list.add(list);
     }

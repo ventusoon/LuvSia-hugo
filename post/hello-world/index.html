@@ -215,9 +215,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 26 Jan 2022 02:48:58 &#43;0000"
+                  Modified <relative-time datetime="Wed, 26 Jan 2022 03:02:29 &#43;0000"
                     class="no-wrap">
-                    Wed, 26 Jan 2022 02:48:58 &#43;0000</relative-time>
+                    Wed, 26 Jan 2022 03:02:29 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -241,7 +241,7 @@ if (!doNotTrack) {
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          3330 Words
+                          3333 Words
                     
 
                   </div>
@@ -446,10 +446,10 @@ if (!doNotTrack) {
 <p>安装主题</p>
 <ul>
 <li>
-<p><strong>在themes目录下 git clone 或者 git submodule add ，后者能较方便的升级主题(根目录上传到GitHub后，themes文件夹会显示为一个无法打开的带白箭头的文件夹图标，后面要用到的action要想跑起来一定要记得加上submodule的配置）。</strong></p>
+<p><strong>找到喜欢的<a href="https://themes.gohugo.io/themes/github-style">主题</a>，在themes目录下 git clone 或者 git submodule add ，模块化安装能够方便升级主题(根目录上传到GitHub后，themes文件夹会链接到主题仓库界面，后面要用到的action要想跑起来一定要记得加上submodule的配置）。</strong></p>
 </li>
 <li>
-<p>打开新的 config.toml 文件，修改 theme = “example-theme” 为你安装的主题名，主题名要与 themes 中的主题文件夹名称一致。这样主题就安装好了。</p>
+<p>打开新的 config.toml 文件，修改 theme = “example-theme” 为你安装的主题名，主题名要与 themes 中的主题文件夹名称一致。</p>
 </li>
 </ul>
 </li>
@@ -472,7 +472,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ssh <span style="color:#f92672">-</span>T git<span style="color:#a6e22e">@github.com</span>
 </code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Hi <span style="color:#f92672">&lt;</span>github<span style="color:#f92672">-</span>username<span style="color:#f92672">&gt;!</span> You<span style="color:#960050;background-color:#1e0010">&#39;</span>ve successfully authenticated<span style="color:#f92672">,</span> but GitHub does not provide shell access<span style="color:#f92672">.</span>
 </code></pre></div><ul>
-<li>生成 Token
+<li>生成 Token，用于连接两个仓库。
 <ul>
 <li>
 <p>右上角 <strong>Settings</strong> 里找到 <strong>Developer settings</strong> ，再点 <strong>Personal access tokens</strong> ，<strong>Generate new token</strong> 生成新的 <strong>token</strong> ，有效期可选永久生效。</p>

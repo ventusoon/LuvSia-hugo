@@ -182,8 +182,6 @@ if (!doNotTrack) {
   </header>
 </div>
   
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
 <div>
   <main>
     <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
@@ -211,9 +209,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Tue, 01 Feb 2022 07:02:28 &#43;0000"
+                  Modified <relative-time datetime="Sun, 06 Feb 2022 06:56:19 &#43;0000"
                     class="no-wrap">
-                    Tue, 01 Feb 2022 07:02:28 &#43;0000</relative-time>
+                    Sun, 06 Feb 2022 06:56:19 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -228,16 +226,22 @@ if (!doNotTrack) {
         <div>
           <div class="js-gist-file-update-container js-task-list-container file-box">
             <div id="file-pytest" class="file my-2">
-              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
                 <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
                   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
                     
-                    <summary id="toc-toggle" class="btn btn-octicon m-0 mr-2 p-2" aria-haspopup="menu" aria-label="Table of Contents" role="button">
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
                       <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
                         <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
                       </svg>
                     </summary>
-                          5293 Words
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      5293 Words
                     
 
                   </div>
@@ -268,7 +272,7 @@ if (!doNotTrack) {
               </div>
 
 
-              <div class="Box-body px-5 pb-5">
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
                 <article class="markdown-body entry-content container-lg"><p><em><strong>Build this site</strong></em></p>
 <p><em><strong>Hugo Blog 实战</strong></em></p>
 <ul>
@@ -696,70 +700,8 @@ taskkill /f /PID xxxxx  <span style="color:#75715e">#杀死占用的进程</span
     </div>
   </main>
 </div>
-<script>
- 
- 
- 
- window.onload = function () {
-   const header = document.getElementById('post-header');
-   const headerHeight = header.offsetHeight;
-   
-   document.documentElement.style.scrollPaddingTop = headerHeight + 10 + "px";
- }
-
- const tocToggleButton = document.getElementById("toc-toggle");
-
- const tippyInstance = tippy('#toc-toggle', {
-  trigger: 'click',
-  content: '<div id="table-of-contents">\u003cnav id=\u0022TableOfContents\u0022\u003e\n  \u003cul\u003e\n    \u003cli\u003e\u003ca href=\u0022#闲言碎语\u0022\u003e♡闲言碎语\u003c\/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\u0022#从信用卡聊到陈年往事\u0022\u003e✦从“信用卡”聊到陈年往事\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#如何选择hexo与hugo\u0022\u003e✦如何选择Hexo与Hugo？\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#最终选择\u0022\u003e✦最终选择\u003c\/a\u003e\u003c\/li\u003e\n      \u003c\/ul\u003e\n    \u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#准备工作\u0022\u003e♡准备工作\u003c\/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\u0022#安装环境和工具\u0022\u003e✦安装环境和工具\u003c\/a\u003e\u003c\/li\u003e\n      \u003c\/ul\u003e\n    \u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#开始实战\u0022\u003e♡开始实战\u003c\/a\u003e\n      \u003cul\u003e\n        \u003cli\u003e\u003ca href=\u0022#本地搭建\u0022\u003e✦本地搭建\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#根目录同步私有仓库\u0022\u003e✦根目录同步私有仓库\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#自动部署到公开仓库\u0022\u003e✦自动部署到公开仓库\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#cdn加速\u0022\u003e✦CDN加速\u003c\/a\u003e\u003c\/li\u003e\n        \u003cli\u003e\u003ca href=\u0022#大功告成\u0022\u003e✦大功告成\u003c\/a\u003e\u003c\/li\u003e\n      \u003c\/ul\u003e\n    \u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#填坑后记\u0022\u003e♡填坑后记\u003c\/a\u003e\u003c\/li\u003e\n    \u003cli\u003e\u003ca href=\u0022#写在最后\u0022\u003e♡写在最后\u003c\/a\u003e\u003c\/li\u003e\n  \u003c\/ul\u003e\n\u003c\/nav\u003e</div>',
-  allowHTML: true,
-  placement: 'bottom-start',
-  interactive: true,
-  arrow: false,
-  maxWidth: "none",
-  onHide: function () { tocToggleButton.classList.remove("hover"); },
-  onShow: function () { tocToggleButton.classList.add("hover"); },
-  onShown: function () {
-    selectTableOfContentsOption();
-
-    if (window.hasSetupTableOfContentsListeners) {
-      return;
-    }
-
-    const tableOfContents = document.getElementById("table-of-contents");
-    tableOfContents.addEventListener('click', function () {
-      
-      tippyInstance[0].hide();
-    });
-
-    window.hasSetupTableOfContentsListeners = true;
-  }
- });
-
- function selectTableOfContentsOption () {
-   const optionSelectedClass = 'table-of-contents-option-selected';
-
-   const tableOfContentsOptions = document.querySelectorAll("#table-of-contents > nav > ul li");
-
-   for (const option of tableOfContentsOptions) {
-     
-
-     const [child] = option.children;
-     if (child.tagName.toLowerCase() !== 'a') {
-       continue;
-     }
-
-     if (window.location.href === child.href) {
-       child.classList.add(optionSelectedClass);
-     } else {
-       child.classList.remove(optionSelectedClass);
-     }
-   }
- }
-
- window.onhashchange = selectTableOfContentsOption;
-</script>
-
+<script type="application/javascript" src='https://luvsia.com/js/toc.js'></script>
+<link rel="stylesheet" href='https://luvsia.com/css/toc.css' />
 
 <div id="gitalk-container" class="gitalk-container"></div>
 <link rel="stylesheet" href='https://luvsia.com/css/gitalk.css'>

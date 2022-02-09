@@ -209,9 +209,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 09 Feb 2022 07:00:27 &#43;0000"
+                  Modified <relative-time datetime="Wed, 09 Feb 2022 07:13:12 &#43;0000"
                     class="no-wrap">
-                    Wed, 09 Feb 2022 07:00:27 &#43;0000</relative-time>
+                    Wed, 09 Feb 2022 07:13:12 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -241,7 +241,7 @@ if (!doNotTrack) {
                         </div>
                       </div>
                     </details-menu>
-                      5293 Words
+                      5325 Words
                     
 
                   </div>
@@ -490,8 +490,12 @@ if (!doNotTrack) {
 <p><strong>找到喜欢的<a href="https://themes.gohugo.io/themes/github-style">主题</a>，在themes目录下 git clone 或者 git submodule add ，模块化安装能够方便升级主题(根目录上传到GitHub后，themes文件夹会链接到主题仓库界面，后面要用到的action要想跑起来一定要记得加上submodule的配置）。</strong></p>
 </li>
 <li>
-<p>打开新的 config.toml 文件，修改 theme = “example-theme” 为你安装的主题名，主题名要与 themes 中的主题文件夹名称一致。</p>
+<p><strong>以本博客主题为例，用模块方式安装， themes/github-style 为安装到目标文件夹</strong></p>
 </li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">git submodule add git<span style="color:#960050;background-color:#1e0010">@</span>github.com:MeiK2333<span style="color:#f92672">/</span>github<span style="color:#f92672">-</span>style.git themes<span style="color:#f92672">/</span>github<span style="color:#f92672">-</span>style
+</code></pre></div><ul>
+<li>打开新的 config.toml 文件，修改 theme = “example-theme” 为你安装的主题名，主题名要与 themes 中的主题文件夹名称一致。</li>
 </ul>
 <h4 id="本地搭建预览">本地搭建预览</h4>
 <ul>

@@ -224,9 +224,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Thu, 28 Apr 2022 03:27:52 &#43;0000"
+                  Modified <relative-time datetime="Tue, 10 May 2022 01:37:31 &#43;0000"
                     class="no-wrap">
-                    Thu, 28 Apr 2022 03:27:52 &#43;0000</relative-time>
+                    Tue, 10 May 2022 01:37:31 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -256,7 +256,7 @@ if (!doNotTrack) {
                         </div>
                       </div>
                     </details-menu>
-                      1848 Words
+                      1871 Words
                     
 
                   </div>
@@ -538,6 +538,7 @@ if (!doNotTrack) {
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;rpc-whitelist-enabled&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,  <span style="color:#75715e">//是否开启ip白名单，false为否
 </span></span></span></code></pre></div><p><strong>执行启动命令</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">service</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span> <span style="color:#a6e22e">start</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">systemctl</span> <span style="color:#a6e22e">enable</span> <span style="color:#a6e22e">transmission</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span>.<span style="color:#a6e22e">service</span>
 </span></span></code></pre></div><h4 id="2-2transmission-web-control">2-2.transmission web control</h4>
 <p><strong>获取安装脚本</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">wget</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//github.com/ronggang/transmission-web-control/raw/master/release/install-tr-control-cn.sh
@@ -548,7 +549,8 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">代理名称</span> <span style="color:#a6e22e">transmission</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">目标URL</span>  <span style="color:#a6e22e">http</span><span style="color:#f92672">:</span><span style="color:#75715e">//127.0.0.1:9091  发送域名 $host
 </span></span></span></code></pre></div><p><strong>5.修改默认保存目录<code>/GoogleDrive</code>，启用临时目录<code>/Downloads</code>，记得给<code>!权限!</code></strong></p>
-<h3 id="rclone">Rclone</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>把`/Downloads`赋予777权限
+</span></span></code></pre></div><h3 id="rclone">Rclone</h3>
 <table>
 <thead>
 <tr>

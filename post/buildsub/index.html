@@ -218,9 +218,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Tue, 07 Feb 2023 13:33:34 &#43;0000"
+                  Modified <relative-time datetime="Thu, 09 Feb 2023 02:41:01 &#43;0000"
                     class="no-wrap">
-                    Tue, 07 Feb 2023 13:33:34 &#43;0000</relative-time>
+                    Thu, 09 Feb 2023 02:41:01 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -250,7 +250,7 @@ if (!doNotTrack) {
                         </div>
                       </div>
                     </details-menu>
-                      1568 Words
+                      1594 Words
                     
 
                   </div>
@@ -309,7 +309,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">yarn</span> <span style="color:#a6e22e">build</span>
 </span></span></code></pre></div><p>执行以下打包命令，在 /root/sub-web-modify 下面会生成一个 dist 目录，这个目录即为网页的发布目录。</p>
 <p>将这个目录的里面的文件复制到你站点的根目录即可。</p>
-<h2 id="发布前端">发布前端</h2>
+<h2 id="一键搭建前端">一键搭建前端</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JavaScript" data-lang="JavaScript"><span style="display:flex;"><span><span style="color:#a6e22e">cd</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">root</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">git</span> <span style="color:#a6e22e">clone</span> <span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//github.com/youshandefeiyang/sub-web-modify.git &amp;&amp; chmod -R 755 sub-web-modify &amp;&amp; cd sub-web-modify &amp;&amp; yarn install &amp;&amp; yarn build
+</span></span></span></code></pre></div><h2 id="发布前端">发布前端</h2>
 <p>没有安装宝塔的去宝塔官网看教程安装.</p>
 <p>在宝塔面板中点击增加站点分别将前端站点增加上去，并配置好ssl证书。</p>
 <p>将 /root/sub-web/dist文件夹内的所有文件复制到前端站点的根目录下即可。</p>

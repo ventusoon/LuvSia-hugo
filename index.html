@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-	<meta name="generator" content="Hugo 0.111.2">
+	<meta name="generator" content="Hugo 0.111.3">
     <meta charset="utf-8">
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -120,7 +120,9 @@ if (!doNotTrack) {
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script>
-  $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+  $(document).ready(function() {
+    $(document).pjax('a[target!=_blank]', '#pageContent', {fragment: '#pageContent'});
+  });
 </script>
 </head>
 

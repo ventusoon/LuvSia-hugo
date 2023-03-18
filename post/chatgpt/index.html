@@ -42,7 +42,7 @@
 
     
     <meta name="description"
-  content="3 Steps Build your own ChatGPT Web" />
+  content="Build your own ChatGPT Web" />
 <meta name="keywords"
   content='blog, google analytics' />
 <meta name="robots" content="noodp" />
@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Wonderful ChatGPT - Ventus&#39; blog" />
 <meta name="twitter:description"
-  content="3 Steps Build your own ChatGPT Web" />
+  content="Build your own ChatGPT Web" />
 <meta name="twitter:site" content="https://luvsia.com" />
 <meta name="twitter:creator" content="Ventus" />
 <meta name="twitter:image"
@@ -62,7 +62,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Wonderful ChatGPT - Ventus&#39; blog">
 <meta property="og:description"
-  content="3 Steps Build your own ChatGPT Web" />
+  content="Build your own ChatGPT Web" />
 <meta property="og:url" content="https://luvsia.com/post/chatgpt/" />
 <meta property="og:site_name" content="Wonderful ChatGPT" />
 <meta property="og:image"
@@ -221,9 +221,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sat, 18 Mar 2023 21:25:06 &#43;0000"
+                  Modified <relative-time datetime="Sat, 18 Mar 2023 21:25:26 &#43;0000"
                     class="no-wrap">
-                    Sat, 18 Mar 2023 21:25:06 &#43;0000</relative-time>
+                    Sat, 18 Mar 2023 21:25:26 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -253,7 +253,7 @@ if (!doNotTrack) {
                         </div>
                       </div>
                     </details-menu>
-                      764 Words
+                      172 Words
                     
 
                   </div>
@@ -276,136 +276,10 @@ if (!doNotTrack) {
 
 
               <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <article class="markdown-body entry-content container-lg"><h1 id="3-steps-build-your-own-chatgpt-web"><em>3 Steps Build Your Own ChatGPT Web</em></h1>
-<ul>
-<li>
-<p><a href="https://baike.baidu.com/item/ChatGPT/62446358?fr=aladdin"><em>ChatGPT</em></a>（全名：<em>Chat Generative Pre-trained Transformer</em>），美国OpenAI研发的聊天机器人程序，于2022年11月30日发布。</p>
-</li>
-<li>
+                <article class="markdown-body entry-content container-lg"><h1 id="chatgpt"><em>ChatGPT</em></h1>
+<p><a href="https://baike.baidu.com/item/ChatGPT/62446358?fr=aladdin"><em>ChatGPT</em></a>（全名：Chat Generative Pre-trained Transformer），美国OpenAI研发的聊天机器人程序，于2022年11月30日发布。</p>
 <p>ChatGPT是人工智能技术驱动的自然语言处理工具，它能够通过理解和学习人类的语言来进行对话，还能根据聊天的上下文进行互动，真正像人类一样来聊天交流，甚至能完成撰写邮件、视频脚本、文案、翻译、代码，写论文等任务。</p>
-</li>
-</ul>
-<h1 id="chatgpt-webhttpsgithubcomventusoonchatgpt-web"><a href="https://github.com/ventusoon/chatgpt-web"><em>ChatGPT-Web</em></a></h1>
-<ul>
-<li>支持双模型，提供了两种非官方 <code>ChatGPT API</code> 方法</li>
-</ul>
-<h2 id="介绍">介绍</h2>
-<table>
-<thead>
-<tr>
-<th>方式</th>
-<th>免费？</th>
-<th>可靠性</th>
-<th>质量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ChatGPTAPI(gpt-3.5-turbo-0301)</code></td>
-<td>否</td>
-<td>可靠</td>
-<td>相对较笨</td>
-</tr>
-<tr>
-<td><code>ChatGPTUnofficialProxyAPI(网页 accessToken)</code></td>
-<td>是</td>
-<td>相对不可靠</td>
-<td>聪明</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>对比：</li>
-</ul>
-<ol>
-<li><a href="https://platform.openai.com/" title="API获取"><em>ChatGPTAPI(gpt-3.5-turbo-0301)</em></a> 使用 <em>gpt-3.5-turbo-0301</em> 通过官方 <em>OpenAI</em> 补全 <em>API</em> 模拟 <em>ChatGPT</em> （最稳健的方法，但它不是免费的，并且没有使用针对聊天进行微调的模型）</li>
-<li><a href="https://chat.openai.com/api/auth/session" title="AccessToken获取"><em>ChatGPTUnofficialProxyAPI</em></a> 使用非官方代理服务器访问 <em>ChatGPT</em> 的后端 <em>API</em>，绕过 <em>Cloudflare</em>（使用真实的的 <em>ChatGPT</em>，非常轻量级，但依赖于第三方服务器，并且有速率限制）</li>
-</ol>
-<h2 id="感谢原作者chanzhaoyu的辛苦付出">感谢原作者<em>Chanzhaoyu</em>的辛苦付出！</h2>
-<h2 id="搭建步骤">搭建步骤</h2>
-<h3 id="一安装-docker-及-docker-compose">一、安装 <em>Docker</em> 及 <em>Docker-compose</em></h3>
-<ul>
-<li>安装 <em>Docker</em></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#更新、安装必备软件</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>apt-get update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y wget nano
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#安装docker：</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>curl -sSL https://get.docker.com/ | sh
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#开机自动启动</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>systemctl start docker
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>systemctl enable docker
-</span></span></code></pre></div><ul>
-<li>安装 <em>Docker-compose</em></li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
-</span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
-</span></span></code></pre></div><h3 id="二安装-chatgpt-web">二、安装 <em>ChatGPT-Web</em></h3>
-<ul>
-<li>创建目录</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p data/docker_data/chatgpt
-</span></span><span style="display:flex;"><span>cd data/docker_data/chatgpt
-</span></span></code></pre></div><ul>
-<li>创建 <em>docker-compose.yml</em> 文件</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano docker-compose.yml
-</span></span></code></pre></div><ul>
-<li>在文件中填入以下内容，然后 <em>Ctrl+X</em> 保存，按 <em>Y</em> 退出</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>version: <span style="color:#e6db74">&#39;3&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>services:
-</span></span><span style="display:flex;"><span>  app:
-</span></span><span style="display:flex;"><span>    image: luvsia/chatgpt-web <span style="color:#75715e"># 总是使用 latest ,更新时重新 pull 该 tag 镜像即可</span>
-</span></span><span style="display:flex;"><span>    ports:
-</span></span><span style="display:flex;"><span>      - 3002:3002
-</span></span><span style="display:flex;"><span>    environment:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 二选一</span>
-</span></span><span style="display:flex;"><span>      OPENAI_API_KEY: 
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 二选一</span>
-</span></span><span style="display:flex;"><span>      OPENAI_ACCESS_TOKEN: 
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># API接口地址，可选，设置 OPENAI_API_KEY 时可用</span>
-</span></span><span style="display:flex;"><span>      OPENAI_API_BASE_URL:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># API模型，可选，设置 OPENAI_API_KEY 时可用</span>
-</span></span><span style="display:flex;"><span>      OPENAI_API_MODEL:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 反向代理，可选</span>
-</span></span><span style="display:flex;"><span>      API_REVERSE_PROXY:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 访问权限密钥，可选</span>
-</span></span><span style="display:flex;"><span>      AUTH_SECRET_KEY:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># 超时，单位毫秒，可选</span>
-</span></span><span style="display:flex;"><span>      TIMEOUT_MS: <span style="color:#ae81ff">100000</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Socks代理，可选，和 SOCKS_PROXY_PORT 一起时生效</span>
-</span></span><span style="display:flex;"><span>      SOCKS_PROXY_HOST:
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Socks代理端口，可选，和 SOCKS_PROXY_HOST 一起时生效</span>
-</span></span><span style="display:flex;"><span>      SOCKS_PROXY_PORT:
-</span></span></code></pre></div><ul>
-<li>创建完成后，运行</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
-</span></span></code></pre></div><ul>
-<li>然后就可以通过 IP:3002 来访问 <em>ChatGPT</em></li>
-</ul>
-<h3 id="三反代-chatgpt-并使用打字机效果">三、反代 <em>ChatGPT</em> 并使用打字机效果</h3>
-<ul>
-<li>宝塔面板中新建网站chat.example.com并注册证书、开启HTTPS</li>
-</ul>
-<p><img src="/static/images/ChatGPT/1.png" alt="ChatGPT" title="*ChatGPT*"></p>
-<ul>
-<li>反向代理</li>
-</ul>
-<p><img src="/static/images/ChatGPT/2.png" alt="ChatGPT" title="*ChatGPT*"></p>
-<ul>
-<li>修改反向代理配置文件</li>
-</ul>
-<p><img src="/static/images/ChatGPT/3.png" alt="ChatGPT" title="*ChatGPT*"></p>
-<h1 id="大功告成enjoy">大功告成，<em>Enjoy</em></h1>
+<p><a href="https://chat.luvsia.com">Demo</a></p>
 </article>
               </div>
             </div>

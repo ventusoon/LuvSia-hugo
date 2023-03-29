@@ -6,22 +6,31 @@
     <description>Recent content in Tags on Ventus&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Mar 2023 21:22:22 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Mar 2023 10:23:52 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>network</title>
+      <link>https://luvsia.com/tags/network/</link>
+      <pubDate>Wed, 29 Mar 2023 10:23:52 +0800</pubDate>
+      
+      <guid>https://luvsia.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>port forward</title>
+      <link>https://luvsia.com/tags/port-forward/</link>
+      <pubDate>Wed, 29 Mar 2023 10:23:52 +0800</pubDate>
+      
+      <guid>https://luvsia.com/tags/port-forward/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DDNS</title>
       <link>https://luvsia.com/tags/ddns/</link>
       <pubDate>Mon, 27 Mar 2023 21:22:22 +0800</pubDate>
       
       <guid>https://luvsia.com/tags/ddns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>https://luvsia.com/tags/network/</link>
-      <pubDate>Mon, 27 Mar 2023 21:22:22 +0800</pubDate>
-      
-      <guid>https://luvsia.com/tags/network/</guid>
       <description></description>
     </item>
     

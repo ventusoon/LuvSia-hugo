@@ -6,7 +6,16 @@
     <description>Recent content in network on Ventus&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Mar 2023 21:22:22 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Mar 2023 10:23:52 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Port Forward</title>
+      <link>https://luvsia.com/post/port-forwarding/</link>
+      <pubDate>Wed, 29 Mar 2023 10:23:52 +0800</pubDate>
+      
+      <guid>https://luvsia.com/post/port-forwarding/</guid>
+      <description>&lt;em&gt;&lt;strong&gt;记录“复杂”的内网端口转发&lt;/strong&gt;&lt;/em&gt;</description>
+    </item>
+    
     <item>
       <title>Cloudflare &#43; DDNS-GO &#43; RDP</title>
       <link>https://luvsia.com/post/ddns/</link>

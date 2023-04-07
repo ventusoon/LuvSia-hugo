@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hackintosh on Ventus&#39; blog</title>
+    <link>https://luvsia.com/tags/hackintosh/</link>
+    <description>Recent content in Hackintosh on Ventus&#39; blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Apr 2023 02:04:08 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/hackintosh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hackintosh</title>
+      <link>https://luvsia.com/post/hackintosh/</link>
+      <pubDate>Sat, 08 Apr 2023 02:04:08 +0800</pubDate>
+      
+      <guid>https://luvsia.com/post/hackintosh/</guid>
+      <description>&lt;em&gt;&lt;strong&gt;Hackintosh黑苹果重启计划&lt;/strong&gt;&lt;/em&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

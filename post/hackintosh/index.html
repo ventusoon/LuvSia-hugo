@@ -221,9 +221,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sat, 15 Apr 2023 19:26:03 &#43;0000"
+                  Modified <relative-time datetime="Wed, 19 Apr 2023 08:15:10 &#43;0000"
                     class="no-wrap">
-                    Sat, 15 Apr 2023 19:26:03 &#43;0000</relative-time>
+                    Wed, 19 Apr 2023 08:15:10 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -253,7 +253,7 @@ if (!doNotTrack) {
                         </div>
                       </div>
                     </details-menu>
-                      633 Words
+                      984 Words
                     
 
                   </div>
@@ -289,13 +289,13 @@ if (!doNotTrack) {
 <p>故此，本意是在网上选购一台性价比较高的软路由，选着选着不知道怎就看到了一台十分合心意的小主机，实在按捺不住折腾的心情，就对老婆先斩后奏买了下来（幸得老婆宽厚，又加上我整天闹着要 <em>NAS</em> ，对比之下，这台小主机的价格还是让她允了下来）</p>
 </li>
 <li>
-<p>刚好因工作原因经常奔波两地，加上最近频繁地码字建站，用这台小主机组一台黑苹果，重温下精美的 <em>MacOS</em> ，既能在家里和单位用，也能提高码字的效率。</p>
+<p>刚好因工作原因经常奔波两地，加上最近频繁地码字建站，用这台小主机组一台黑苹果，重温下精美的 <em>MacOS</em> ，既能在家里和单位用，也能提高码字的效率，办公、开发两不误。</p>
 </li>
 </ul>
 <h2 id="主机及配置">主机及配置</h2>
 <ul>
 <li>
-<p>在网上看了很多视频和教程，最终选择了惠普的 <em>800-G4-DM</em> 准系统主机，外加 <em>I5 8500T</em> 的8代 <em>cpu</em>。基本配置如下</p>
+<p>在网上看了很多视频和教程，左挑右选，最终选择了惠普的 <em>800-G4-DM</em> 准系统主机，外加 <em>I5 8500T</em> 的8代 <em>cpu</em>。基本配置如下：</p>
 </li>
 <li>
 <table>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td style="text-align:center"></td>
-<td style="text-align:center"><strong>cpu</strong></td>
+<td style="text-align:center"><strong>CPU</strong></td>
 <td style="text-align:center">酷睿 i5 8500T</td>
 <td></td>
 </tr>
@@ -329,7 +329,7 @@ if (!doNotTrack) {
 <tr>
 <td style="text-align:center"></td>
 <td style="text-align:center"><strong>内存</strong></td>
-<td style="text-align:center">DDR4 2666 三星16GB（2X8GB）</td>
+<td style="text-align:center">DDR4 2400MHz 三星16GB（2X8GB）</td>
 <td></td>
 </tr>
 <tr>
@@ -341,21 +341,173 @@ if (!doNotTrack) {
 <tr>
 <td style="text-align:center"></td>
 <td style="text-align:center"><strong>固态硬盘</strong></td>
-<td style="text-align:center">**</td>
+<td style="text-align:center">台电 256G SSD （加装2T SATA SSD）</td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center"></td>
-<td style="text-align:center"><strong>opencore</strong></td>
+<td style="text-align:center"><strong>OpenCore</strong></td>
 <td style="text-align:center">0.9.1</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong>MacOS</strong></td>
+<td style="text-align:center">Ventura 13.3.1 (22E261)</td>
 <td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
 </li>
+</ul>
+<p align="center"><img height=435 src=/images/Hackintosh/1.png></p>
+<ul>
 <li>
-<p><a href="https://www.hacktiny.com/posts/2740.html">图鉴</a></p>
+<p>完美主义的黑苹果完美度：</p>
 </li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center">状态</th>
+<th style="text-align:center">完美</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>CPU</strong></td>
+<td style="text-align:center"><strong>睿频</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong>VDA 解码器</strong></td>
+<td style="text-align:center">完全支持</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>IGPU</strong></td>
+<td style="text-align:center"><strong>硬件加速（QE/CI）</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong>Metal支持</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>USB</strong></td>
+<td style="text-align:center"><strong>定制/完整识别</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>网卡</strong></td>
+<td style="text-align:center"><strong>内建</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>WIFI</strong></td>
+<td style="text-align:center"><strong>免驱</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>蓝牙</strong></td>
+<td style="text-align:center"><strong>全功能</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">Hackintool无法识别，使用正常（又不是不能用.jpg）</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>AirDrop</strong></td>
+<td style="text-align:center"><strong>全功能</strong></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">仅支持从iOS端投送到Mac</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>核显输出</strong></td>
+<td style="text-align:center"><strong>定制/全功能</strong></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">截编时只完美一个“DP-HDMI”，其余两个输出口等有测试显示器再折腾</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>声音</strong></td>
+<td style="text-align:center"><strong>全功能</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>序列号</strong></td>
+<td style="text-align:center"><strong>有效没有被用过的序列号</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>iMessage</strong></td>
+<td style="text-align:center"><strong>全功能</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td style="text-align:center">解放手机 <em>Get</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>随航</strong></td>
+<td style="text-align:center"><strong>功能</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td style="text-align:center">新功能真爽，iOS和 macOS无缝衔接</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>HiDPi</strong></td>
+<td style="text-align:center"><strong>开启</strong></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">能开，显示器物理分辨率太低，再开启HiDPi的分辨率更低，就很难受（有了4K显示器再说吧）</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>睡眠</strong></td>
+<td style="text-align:center"><strong>开启</strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">✔︎</td>
+<td style="text-align:center">随睡随醒</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>系统图鉴</p>
+</li>
+<li>
+<img width=800 src=/images/Hackintosh/2.png>
+</li>
+</ul>
+<details>
+<summary>
+View More Screenshots
+</summary>
+<p><img src="/images/Hackintosh//3.png" alt="1">
+<img src="/images/Hackintosh//4.png" alt="1"></p>
+</details>
+<ul>
+<li><a href="https://www.hacktiny.com/posts/2740.html">主机图鉴</a></li>
 </ul>
 <p><img src="/images/Hackintosh/HP-EliteDesk-800-G4-35W-09.jpg" alt="1" title="图鉴"></p>
 <details>

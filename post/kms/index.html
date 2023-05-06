@@ -221,9 +221,9 @@ if (!doNotTrack) {
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Sat, 06 May 2023 08:15:41 &#43;0000"
+                  Modified <relative-time datetime="Sat, 06 May 2023 08:32:10 &#43;0000"
                     class="no-wrap">
-                    Sat, 06 May 2023 08:15:41 &#43;0000</relative-time>
+                    Sat, 06 May 2023 08:32:10 &#43;0000</relative-time>
                   
                 </div>
               </div>
@@ -253,7 +253,7 @@ if (!doNotTrack) {
                         </div>
                       </div>
                     </details-menu>
-                      1030 Words
+                      1423 Words
                     
 
                   </div>
@@ -317,20 +317,52 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./kms.sh uninstall
 </span></span></code></pre></div><h2 id="激活步骤">激活步骤</h2>
 <ul>
-<li>管理员命令执行</li>
+<li>使用管理员权限运行 <em>cmd</em> 查看系统版本，命令如下：</li>
 </ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wmic os get caption
+</span></span></code></pre></div><ul>
+<li>使用管理员权限运行 cmd 安装从上面列表得到的 key，命令如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+</span></span></code></pre></div><ul>
+<li>使用管理员权限运行 cmd 将 KMS 服务器地址设置为你自己的 IP 或 域名，后面最好再加上端口号（:1688），命令如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>slmgr /skms Your IP or Domain:1688
+</span></span></code></pre></div><ul>
+<li>注意：本脚本所做的工作就是此步骤。当你的 KMS 服务出于启动状态，那么此处就可以设置为你自己的 KMS 服务器地址。
+使用管理员权限运行 cmd 手动激活系统，命令如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>slmgr /ato
+</span></span></code></pre></div><ul>
+<li>关于 Office 的激活，要求必须是 VOL 版本，否则无法激活。
+找到你的 Office 安装目录，32 位默认一般为 C:\Program Files (x86)\Microsoft Office\Office16
+64 位默认一般为 C:\Program Files\Microsoft Office\Office16
+Office16 是 Office 2016，Office15 就是 Office 2013，Office14 就是 Office 2010。
+打开以上所说的目录，应该有个 OSPP.VBS 文件。
+使用管理员权限运行 cmd 进入 Office 目录，命令如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;C:\Program Files (x86)\Microsoft Office\Office16&#34;</span>
+</span></span></code></pre></div><ul>
+<li>使用管理员权限运行 cmd 注册 KMS 服务器地址：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cscript ospp.vbs /sethst:Your IP or Domain
+</span></span></code></pre></div><ul>
+<li>使用管理员权限运行 cmd 手动激活 Office，命令如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cscript ospp.vbs /act
+</span></span></code></pre></div><h3 id="主要步骤">主要步骤</h3>
 <ol>
-<li>设置服务 <code>slmgr -skms skms.netnr.eu.org</code></li>
+<li>设置服务 <code>slmgr -skms Your IP or Domain</code></li>
 <li>安装密钥 <code>slmgr -ipk 版本对应秘钥</code></li>
 <li>激活系统 <code>slmgr -ato</code></li>
 </ol>
 <h3 id="可用服务">可用服务</h3>
 <ul>
-<li><code>skms.netnr.eu.org</code> 维护 <strong>CNAME</strong> 指向有效的服务</li>
+<li><code>Your IP or Domain</code> 维护 <strong>CNAME</strong> 指向有效的服务</li>
 </ul>
 <ul>
-<li><code>telnet skms.netnr.eu.org 1688</code> 测试服务是否可用</li>
-<li><code>tcping skms.netnr.eu.org 1688</code></li>
+<li><code>telnet Your IP or Domain 1688</code> 测试服务是否可用</li>
+<li><code>tcping Your IP or Domain 1688</code></li>
 </ul>
 <h3 id="密钥">密钥</h3>
 <p><a href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys">https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys</a></p>

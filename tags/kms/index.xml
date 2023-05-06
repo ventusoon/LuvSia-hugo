@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tools on Ventus&#39; blog</title>
-    <link>https://luvsia.com/tags/tools/</link>
-    <description>Recent content in tools on Ventus&#39; blog</description>
+    <title>kms on Ventus&#39; blog</title>
+    <link>https://luvsia.com/tags/kms/</link>
+    <description>Recent content in kms on Ventus&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 May 2023 14:19:10 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 May 2023 14:19:10 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/kms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KMS 服务端安装部署教程</title>
       <link>https://luvsia.com/post/kms/</link>
@@ -15,15 +15,6 @@
       <guid>https://luvsia.com/post/kms/</guid>
       <description>KMS Server Installation and Deployment Tutorial
 关于脚本 KMS 服务安装完成后会加入开机自启动。 默认记录日志，其日志位于 /var/log/vlmcsd.log。 开始部署 使用 root 用户登录，运行以下命令： wget --no-check-certificate https://github.com/teddysun/across/raw/master/kms.sh &amp;amp;&amp;amp; chmod +x kms.sh &amp;amp;&amp;amp; ./kms.sh 安装完成后，输入以下命令查看端口号 1688 的监听情况 netstat -nxtlp | grep 1688 返回值类似于如下这样就表示 OK 了： tcp 0 0 0.0.0.0:1688 0.0.0.0:* LISTEN 3200/vlmcsd tcp 0 0 :::1688 :::* LISTEN 3200/vlmcsd 本脚本安装完成后，会将 KMS 服务加入开机自启动。 其他命令 启动：/etc/init.d/kms start 停止：/etc/init.d/kms stop 重启：/etc/init.d/kms restart 状态：/etc/init.d/kms status 卸载方法 ./kms.sh uninstall 激活步骤 管理员命令执行 设置服务 slmgr -skms skms.netnr.eu.org 安装密钥 slmgr -ipk 版本对应秘钥 激活系统 slmgr -ato 可用服务 skms.</description>
-    </item>
-    
-    <item>
-      <title>Github上的生产力工具</title>
-      <link>https://luvsia.com/post/github-tools/</link>
-      <pubDate>Mon, 03 Apr 2023 14:22:18 +0800</pubDate>
-      
-      <guid>https://luvsia.com/post/github-tools/</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Productivity tools on Github&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

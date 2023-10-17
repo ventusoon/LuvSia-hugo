@@ -6,7 +6,16 @@
     <description>Recent content in Server on Ventus&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 Apr 2023 01:45:48 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Oct 2023 13:56:43 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用GitHub Actions自动部署前端到服务器</title>
+      <link>https://luvsia.com/post/github-actions-deploy/</link>
+      <pubDate>Tue, 17 Oct 2023 13:56:43 +0800</pubDate>
+      
+      <guid>https://luvsia.com/post/github-actions-deploy/</guid>
+      <description>&lt;em&gt;&lt;strong&gt;Automatically deploying the Front End to the server using GitHub Actions&lt;/strong&gt;&lt;/em&gt;</description>
+    </item>
+    
     <item>
       <title>用Nginx Proxy Manager部署静态网页</title>
       <link>https://luvsia.com/post/nginx-proxy-manager/</link>

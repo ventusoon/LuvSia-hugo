@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Ventus&#39; blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 May 2023 14:19:10 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Oct 2023 13:56:43 +0800</lastBuildDate><atom:link href="https://luvsia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Front End</title>
+      <link>https://luvsia.com/tags/front-end/</link>
+      <pubDate>Tue, 17 Oct 2023 13:56:43 +0800</pubDate>
+      
+      <guid>https://luvsia.com/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>https://luvsia.com/tags/server/</link>
+      <pubDate>Tue, 17 Oct 2023 13:56:43 +0800</pubDate>
+      
+      <guid>https://luvsia.com/tags/server/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>kms</title>
       <link>https://luvsia.com/tags/kms/</link>
@@ -40,15 +58,6 @@
       <pubDate>Mon, 10 Apr 2023 01:45:48 +0800</pubDate>
       
       <guid>https://luvsia.com/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Server</title>
-      <link>https://luvsia.com/tags/server/</link>
-      <pubDate>Mon, 10 Apr 2023 01:45:48 +0800</pubDate>
-      
-      <guid>https://luvsia.com/tags/server/</guid>
       <description></description>
     </item>
     
